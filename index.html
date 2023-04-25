@@ -1,28 +1,19 @@
 <!DOCTYPE html>
 <html>
+
 <body>
 <h1>Cookie Clicker</h1>
-
-<p>The onclick event triggers a function when an element is clicked on.</p>
-<p>Click to trigger a function that will output "Hello World":</p>
-  <h1>Cookies: <span id="cookies"></span></h1>
-  <script>
-    document.getElementById("name").innerHTML = name;
-  </script>
-
-<button onclick="myFunction()">Click me</button>
-
-<p id="demo"></p>
+<h1 id="cookie_counter"> Cookies: 0 </h1>
+<button id="name" onclick="myFunction()">Click me</button>
 
 <script>
 var cookies=0
+var name="hi"
 function myFunction() {
-  document.getElementById("demo").innerHTML = "Hello World";
-  console.log("hello world")
-    cookies+=1
+	cookies+=1
+    document.getElementById("cookie_counter").innerHTML = "Cookies: "+cookies;   
 }
 </script>
 
 </body>
 </html>
-
