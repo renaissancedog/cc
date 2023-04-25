@@ -19,18 +19,20 @@ var cursorcost=15;
 var grandmacost=100;
 var farmcost=1100;
 var minecost=12000;
+
 function update_count() {
-	cookies+=1
+    cookies+=1;
     document.getElementById("cookie_counter").innerHTML = "Cookies: "+Math.round(cookies-0.5);   
 }
+
 function buy_cursor() {
-  if (cookies>=cursorcost) {
-    cookies-=cursorcost
-    cursors+=1
-    cursorcost*=1.15
-  }
-  document.getElementById("cookie_counter").innerHTML = "Cookies: "+Math.round(cookies-0.5);   
-  document.getElementById("cursor_btn").innerHtml( "Buy Cursor for "+(Math.round(cursorcost+0.49))+" cookies"))
+    if (cookies>=cursorcost) {
+        cookies-=cursorcost;
+        cursors+=1;
+        cursorcost*=1.15;
+    }
+    document.getElementById("cookie_counter").innerHTML = "Cookies: "+Math.round(cookies-0.5);
+    document.getElementById("cursor_btn").innerHTML = "Buy Cursor for "+(Math.round(cursorcost+0.49))+" cookies";
 }
 </script>
 
