@@ -1,2 +1,2 @@
 # cc
-cookieclicker simulator
+Hi. This is cookie clicker simplified.
