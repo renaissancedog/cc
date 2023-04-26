@@ -22,6 +22,8 @@ function update() {
     document.getElementById("cps_counter").innerHTML = "CPS: "+Math.round(cps*10)/10;
     document.getElementById("cursor_btn").innerHTML = "Buy Cursor for "+(Math.round(cursorcost+0.49))+" cookies";
     document.getElementById("grandma_btn").innerHTML = "Buy Grandma for "+(Math.round(grandmacost+0.49))+" cookies";
+	document.getElementById("farm_btn").innerHTML = "Buy Farm for "+(Math.round(farmcost+0.49))+" cookies";
+	document.getElementById("mine_btn").innerHTML = "Buy Mine for "+(Math.round(minecost+0.49))+" cookies";
     cookies+=cps/10;
     totalcookies+=cps/10;
 }
@@ -48,3 +50,20 @@ function buy_grandma() {
     }
     update();
 }
+function buy_farm() {
+    if (cookies>=farmcost) {
+        cookies-=farmcost;
+        farms+=1;
+        farmcost*=1.15;
+    }
+    update();
+}
+function buy_mine() {
+    if (cookies>=minecost) {
+        cookies-=minecost;
+        mines+=1;
+        minecost*=1.15;
+    }
+    update();
+}
+
