@@ -1,4 +1,4 @@
-var cookies=100000;
+var cookies=0;
 var totalcookies=0;
 var cps=0;
 
