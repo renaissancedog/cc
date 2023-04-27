@@ -8,14 +8,16 @@
 </head>
 <body>
 <h1>Cookie Clicker</h1>
-<h2 id="cookie_counter"> Cookies: 0 </h2>
+<div class="stats">
+  <h2 id="cookie_counter"> Cookies: 0 </h2>
 <h2 id="cps_counter"> CPS: 0 </h2>
   <img id="name" src="cookie.png" 
-       alt="Click Me!" onclick="clicked()"/> <br><br>
-<button id="cursor_btn" onclick="buy_cursor()">Buy Cursor for 15 cookies</button><br><br>
+       alt="Click Me!" onclick="clicked()"/> <br><br></div>
+<div class="buy">
+  <button id="cursor_btn" onclick="buy_cursor()">Buy Cursor for 15 cookies</button><br><br>
 <button id="grandma_btn" onclick="buy_grandma()">Buy Grandma for 100 cookies</button><br><br>
   <button id="farm_btn" onclick="buy_farm()">Buy Farm for 1100 cookies</button><br><br>
   <button id="mine_btn" onclick="buy_mine()">Buy Mine for 12000 cookies</button><br><br>
-
+  </div>
 </body>
 </html>
