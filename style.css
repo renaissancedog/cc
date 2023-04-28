@@ -1,3 +1,11 @@
-.stats {
-  background-color: yellow;
-} 
+
+		.container {
+			display: flex; /* Use flexbox to create a row */
+			flex-wrap: wrap; /* Wrap elements onto multiple lines */
+		}
+		
+		.column {
+			flex: 50%; /* Each column will take up 50% of the row */
+			padding: 10px;
+			box-sizing: border-box; /* Make sure padding is included in the column width */
+		}
