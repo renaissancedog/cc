@@ -13,17 +13,17 @@ var farmcost=1100;
 var minecost=12000;
 
 setInterval(function() {
-  update();
+	update();
 }, 100);
 
 function update() {
 	cps=cursors*0.1+grandmas+farms*8+mines*47;
 	document.getElementById("cookie_counter").innerHTML = "Cookies: "+Math.round(cookies-0.5);  
-    document.getElementById("cps_counter").innerHTML = "CPS: "+Math.round(cps*10)/10;
-    document.getElementById("cursor_btn").innerHTML = "Buy Cursor for "+(Math.round(cursorcost+0.49))+" cookies";
-    document.getElementById("grandma_btn").innerHTML = "Buy Grandma for "+(Math.round(grandmacost+0.49))+" cookies";
-	document.getElementById("farm_btn").innerHTML = "Buy Farm for "+(Math.round(farmcost+0.49))+" cookies";
-	document.getElementById("mine_btn").innerHTML = "Buy Mine for "+(Math.round(minecost+0.49))+" cookies";
+	document.getElementById("cps_counter").innerHTML = "CPS: "+Math.round(cps*10)/10;
+	document.getElementById("cursor_btn").innerHTML = "You have "+cursors+" cursors. Buy one for "+(Math.round(cursorcost+0.49))+" cookies.";
+	document.getElementById("grandma_btn").innerHTML = "You have "+grandmas+" grandmas. Buy one for "+(Math.round(grandmacost+0.49))+" cookies.";
+	document.getElementById("farm_btn").innerHTML = "Buy Farm for "+(Math.round(farmcost+0.49))+" cookies.";
+    document.getElementById("mine_btn").innerHTML = "Buy Mine for "+(Math.round(minecost+0.49))+" cookies.";
     cookies+=cps/10;
     totalcookies+=cps/10;
 }
