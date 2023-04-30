@@ -13,11 +13,17 @@
 			<h2 id="cps_counter"> CPS: 0 </h2>
 			<img id="name" src="cookie.png" alt="Click Me!" onclick="clicked()"/> <br><br>
 		</div>
-		<div class="column">
-			<button id="cursor_btn" class="shop" onclick="buy_cursor()">Buy Cursor for 15 cookies</button><br><br>
-			<button id="grandma_btn" class="shop" onclick="buy_grandma()">Buy Grandma for 100 cookies</button><br><br>
-			<button id="farm_btn" class="shop" onclick="buy_farm()">Buy Farm for 1100 cookies</button><br><br>
-			<button id="mine_btn" class="shop" onclick="buy_mine()">Buy Mine for 12000 cookies</button><br><br>
+		<div class="column" class="shop">
+			<div class="shopitem">
+				<button id="cursor_btn" class="shop" onclick="buy_cursor()">Buy Cursor for 15 cookies</button><br><br>
+				<p id="cursorcount"></p>
+				<script>document.getElementById("cursorcount").innerHTML = cursors;</script>
+			<div class="shopitem">
+				<button id="grandma_btn" class="shop" onclick="buy_grandma()">Buy Grandma for 100 cookies</button><br><br>
+			<div class="shopitem">
+				<button id="farm_btn" class="shop" onclick="buy_farm()">Buy Farm for 1100 cookies</button><br><br>
+			<div class="shopitem">
+				<button id="mine_btn" class="shop" onclick="buy_mine()">Buy Mine for 12000 cookies</button><br><br>
 		</div>
 	</div>
 </body>
