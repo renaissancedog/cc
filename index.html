@@ -14,15 +14,11 @@
 			<img id="name" src="cookie.png" alt="Click Me!" onclick="clicked()"/> <br><br>
 		</div>
 		<div class="column" class="shop">
-			<div class="shopitem">
-				<p id="cursorcount"></p>
-				<button id="cursor_btn" class="shop" onclick="buy_cursor()">Buy Cursor for 15 cookies</button><br><br>
-				<script>document.getElementById("cursorcount").innerHTML = "You have "+cursors+" cursors.";</script>
-			<div class="shopitem">
+    				<p id="cursorcount" style="display: inline-block;"></p>
+    				<button id="cursor_btn" class="shop" style="display: inline-block;" onclick="buy_cursor()">Buy Cursor for 15 cookies</button><br><br>
+    				<script>document.getElementById("cursorcount").innerHTML = "You have "+cursors+" cursors.";</script>
 				<button id="grandma_btn" class="shop" onclick="buy_grandma()">Buy Grandma for 100 cookies</button><br><br>
-			<div class="shopitem">
 				<button id="farm_btn" class="shop" onclick="buy_farm()">Buy Farm for 1100 cookies</button><br><br>
-			<div class="shopitem">
 				<button id="mine_btn" class="shop" onclick="buy_mine()">Buy Mine for 12000 cookies</button><br><br>
 		</div>
 	</div>
