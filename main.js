@@ -23,9 +23,9 @@ function update() {
 	document.getElementById("cursor_btn").innerHTML = "You have "+cursors+" cursors. Buy one for "+(Math.round(cursorcost+0.49))+" cookies.";
 	document.getElementById("grandma_btn").innerHTML = "You have "+grandmas+" grandmas. Buy one for "+(Math.round(grandmacost+0.49))+" cookies.";
 	document.getElementById("farm_btn").innerHTML = "You have "+farms+" farms. Buy one for "+(Math.round(farmcost+0.49))+" cookies.";
-   	document.getElementById("mine_btn").innerHTML = "You have "+mines+" mines. Buy one for "+(Math.round(minecost+0.49))+" cookies.";
-    cookies+=cps/10;
-    totalcookies+=cps/10;
+	document.getElementById("mine_btn").innerHTML = "You have "+mines+" mines. Buy one for "+(Math.round(minecost+0.49))+" cookies.";
+	cookies+=cps/10;
+	totalcookies+=cps/10;
 }
 
 function clicked() {
