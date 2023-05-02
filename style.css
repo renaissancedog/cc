@@ -8,3 +8,8 @@
   padding: 10px;
   box-sizing: border-box;
 }
+.shop {
+  flex: 25%;
+  padding: 10px;
+  box-sizing: border-box;
+}
