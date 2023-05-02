@@ -32,7 +32,7 @@ setInterval(function() {
 }, 100);
 
 function update() {
-	cps=cursors*0.1+grandmas+farms*8+mines*47;
+	cps=cursors*0.1+grandmas+farms*8+mines*47+factories*260+banks*1400+temples*7800+wizards*44000+shipments*260000+labs*1600000;
 	document.getElementById("cookie_counter").innerHTML = "Cookies: "+Math.round(cookies-0.5);  
 	document.getElementById("cps_counter").innerHTML = "CPS: "+Math.round(cps*10)/10;
 	document.getElementById("cursor_btn").innerHTML = "You have "+cursors+" cursors. Buy one for "+(Math.round(cursorcost+0.49))+" cookies.";
