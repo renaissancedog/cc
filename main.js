@@ -24,6 +24,9 @@ var wizardcost=330000000;
 var shipmentcost=5100000000;
 var labcost=75000000000;
 
+var numberlist=[cookies, totalcookies, cps, 
+		cursors, grandmas, farms, mines, factories, banks, temples, wizards, shipments, labs,
+		cursorcost, grandmacost, farmcost, minecost, factorycost, bankcost, templecost, wizardcost, shipmentcost, labcost]
 setInterval(function() {
 	update();
 }, 100);
