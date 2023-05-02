@@ -13,3 +13,13 @@
   padding: 10px;
   box-sizing: border-box;
 }
+.bigcookie {
+  border-radius: 50%;
+  background-image: "cookie.png";
+  background-size: cover;
+  background-position: center;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
