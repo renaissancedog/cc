@@ -27,12 +27,15 @@ var labcost=75000000000;
 var numberlist=[cookies, totalcookies, cps, 
 		cursors, grandmas, farms, mines, factories, banks, temples, wizards, shipments, labs,
 		cursorcost, grandmacost, farmcost, minecost, factorycost, bankcost, templecost, wizardcost, shipmentcost, labcost]
-setInterval(function() {
-	update();
-}, 100);
+function gameLoop() {
+  update();
+  requestAnimationFrame(gameLoop);
+}
+gameLoop();
 
 function update() {
 	cps=cursors*0.1+grandmas+farms*8+mines*47+factories*260+banks*1400+temples*7800+wizards*44000+shipments*260000+labs*1600000;
+	
 	document.getElementById("cookie_counter").innerHTML = "Cookies: "+Math.round(cookies-0.5);  
 	document.getElementById("cps_counter").innerHTML = "CPS: "+Math.round(cps*10)/10;
 	document.getElementById("cursor_btn").innerHTML = "You have "+cursors+" cursors. Buy one for "+(Math.round(cursorcost+0.49))+" cookies.";
@@ -45,6 +48,18 @@ function update() {
 	document.getElementById("wizard_btn").innerHTML = "You have "+wizards+" wizards. Buy one for "+(Math.round(wizardcost+0.49))+" cookies.";
 	document.getElementById("shipment_btn").innerHTML = "You have "+shipments+" shipments. Buy one for "+(Math.round(shipmentcost+0.49))+" cookies.";
 	document.getElementById("lab_btn").innerHTML = "You have "+labs+" alchemy labs. Buy one for "+(Math.round(labcost+0.49))+" cookies.";
+	
+	buyBuilding("cursor", cursorcost);
+	buyBuilding("grandma", grandmacost);
+	buyBuilding("farm", farmcost);
+	buyBuilding("mine", minecost);
+	buyBuilding("factory", factorycost);
+	buyBuilding("bank", bankcost);
+	buyBuilding("temple", templecost);
+	buyBuilding("wizard", wizardcost);
+	buyBuilding("shipment", shipmentcost);
+	buyBuilding("lab", labcost);
+
 	cookies+=cps/10;
 	totalcookies+=cps/10;
 }
@@ -55,84 +70,53 @@ function clicked() {
     update();
 }
 
-function buy_cursor() {
-    if (cookies>=cursorcost) {
-        cookies-=cursorcost;
-        cursors+=1;
-        cursorcost*=1.15;
+function buyBuilding(buildingType, buildingCost) {
+  if (cookies >= buildingCost) {
+    cookies -= buildingCost;
+    switch (buildingType) {
+      case "cursor":
+        cursors += 1;
+        cursorcost *= 1.15;
+        break;
+      case "grandma":
+        grandmas += 1;
+        grandmacost *= 1.15;
+        break;
+      case "farm":
+        farms += 1;
+        farmcost *= 1.15;
+        break;
+      case "mine":
+        mines += 1;
+        minecost *= 1.15;
+        break;
+      case "factory":
+        factories += 1;
+        factorycost *= 1.15;
+        break;
+      case "bank":
+        banks += 1;
+        bankcost *= 1.15;
+        break;
+      case "temple":
+        temples += 1;
+        templecost *= 1.15;
+        break;
+      case "wizard":
+        wizards += 1;
+        wizardcost *= 1.15;
+        break;
+      case "shipment":
+        shipments += 1;
+        shipmentcost *= 1.15;
+        break;
+      case "lab":
+        labs += 1;
+        labcost *= 1.15;
+        break;
+      default:
+        console.log("Invalid building type");
     }
     update();
+  }
 }
-function buy_grandma() {
-    if (cookies>=grandmacost) {
-        cookies-=grandmacost;
-        grandmas+=1;
-        grandmacost*=1.15;
-    }
-    update();
-}
-function buy_farm() {
-    if (cookies>=farmcost) {
-        cookies-=farmcost;
-        farms+=1;
-        farmcost*=1.15;
-    }
-    update();
-}
-function buy_mine() {
-    if (cookies>=minecost) {
-        cookies-=minecost;
-        mines+=1;
-        minecost*=1.15;
-    }
-    update();
-}
-function buy_factory() {
-    if (cookies>=factorycost) {
-        cookies-=factorycost;
-        factories+=1;
-        factorycost*=1.15;
-    }
-    update();
-}
-function buy_bank() {
-    if (cookies>=bankcost) {
-        cookies-=bankcost;
-        banks+=1;
-        bankcost*=1.15;
-    }
-    update();
-}
-function buy_temple() {
-    if (cookies>=templecost) {
-        cookies-=templecost;
-        temples+=1;
-        templecost*=1.15;
-    }
-    update();
-}
-function buy_wizard() {
-    if (cookies>=wizardcost) {
-        cookies-=wizardcost;
-        wizards+=1;
-        wizardcost*=1.15;
-    }
-    update();
-}
-function buy_shipment() {
-    if (cookies>=shipmentcost) {
-        cookies-=shipmentcost;
-        shipments+=1;
-        shipmentcost*=1.15;
-    }
-    update();
-}
-function buy_lab() {
-    if (cookies>=labcost) {
-        cookies-=labcost;
-        labs+=1;
-        labcost*=1.15;
-    }
-    update();
-}
-
