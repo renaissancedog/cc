@@ -27,11 +27,7 @@ var labcost=75000000000;
 var numberlist=[cookies, totalcookies, cps, 
 		cursors, grandmas, farms, mines, factories, banks, temples, wizards, shipments, labs,
 		cursorcost, grandmacost, farmcost, minecost, factorycost, bankcost, templecost, wizardcost, shipmentcost, labcost]
-function gameLoop() {
-  update();
-  requestAnimationFrame(gameLoop);
-}
-gameLoop();
+setInterval(update, 100);
 
 function update() {
 	cps=cursors*0.1+grandmas+farms*8+mines*47+factories*260+banks*1400+temples*7800+wizards*44000+shipments*260000+labs*1600000;
