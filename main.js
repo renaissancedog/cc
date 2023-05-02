@@ -36,12 +36,12 @@ function update() {
 	document.getElementById("grandma_btn").innerHTML = "You have "+grandmas+" grandmas. Buy one for "+(Math.round(grandmacost+0.49))+" cookies.";
 	document.getElementById("farm_btn").innerHTML = "You have "+farms+" farms. Buy one for "+(Math.round(farmcost+0.49))+" cookies.";
 	document.getElementById("mine_btn").innerHTML = "You have "+mines+" mines. Buy one for "+(Math.round(minecost+0.49))+" cookies.";
-	document.getElementById("factory_btn").innerHTML = "You have "+factories+" mines. Buy one for "+(Math.round(factorycost+0.49))+" cookies.";
-	document.getElementById("bank_btn").innerHTML = "You have "+banks+" mines. Buy one for "+(Math.round(bankcost+0.49))+" cookies.";
-	document.getElementById("temple_btn").innerHTML = "You have "+temples+" mines. Buy one for "+(Math.round(templecost+0.49))+" cookies.";
-	document.getElementById("wizard_btn").innerHTML = "You have "+temples+" mines. Buy one for "+(Math.round(wizardcost+0.49))+" cookies.";
-	document.getElementById("shipment_btn").innerHTML = "You have "+temples+" mines. Buy one for "+(Math.round(shipmentcost+0.49))+" cookies.";
-	document.getElementById("lab_btn").innerHTML = "You have "+temples+" mines. Buy one for "+(Math.round(labcost+0.49))+" cookies.";
+	document.getElementById("factory_btn").innerHTML = "You have "+factories+" factories. Buy one for "+(Math.round(factorycost+0.49))+" cookies.";
+	document.getElementById("bank_btn").innerHTML = "You have "+banks+" banks. Buy one for "+(Math.round(bankcost+0.49))+" cookies.";
+	document.getElementById("temple_btn").innerHTML = "You have "+temples+" temples. Buy one for "+(Math.round(templecost+0.49))+" cookies.";
+	document.getElementById("wizard_btn").innerHTML = "You have "+wizards+" wizards. Buy one for "+(Math.round(wizardcost+0.49))+" cookies.";
+	document.getElementById("shipment_btn").innerHTML = "You have "+shipments+" shipments. Buy one for "+(Math.round(shipmentcost+0.49))+" cookies.";
+	document.getElementById("lab_btn").innerHTML = "You have "+labs+" alchemy labs. Buy one for "+(Math.round(labcost+0.49))+" cookies.";
 	cookies+=cps/10;
 	totalcookies+=cps/10;
 }
