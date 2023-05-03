@@ -143,4 +143,8 @@ function newUpgrade(name, cost, x, y) {
 	upgrades.push(name);
 	upgradecost.push(cost);
 }
+function buyUpgrade(name, cost, x, y) {
+	upgrades.push(name);
+	upgradecost.push(cost);
+}
 newUpgrade("My first upgrade", 100, 0, 0);
