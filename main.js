@@ -66,56 +66,88 @@ function clicked() {
     update();
 }
 
-function buyBuilding(buildingType, buildingCost) {
-  if (cookies >= buildingCost) {
-    cookies -= buildingCost;
-    switch (buildingType) {
-      case "cursor":
-        cursors += 1;
-        cursorcost *= 1.15;
-        break;
-      case "grandma":
-        grandmas += 1;
-        grandmacost *= 1.15;
-        break;
-      case "farm":
-        farms += 1;
-        farmcost *= 1.15;
-        break;
-      case "mine":
-        mines += 1;
-        minecost *= 1.15;
-        break;
-      case "factory":
-        factories += 1;
-        factorycost *= 1.15;
-        break;
-      case "bank":
-        banks += 1;
-        bankcost *= 1.15;
-        break;
-      case "temple":
-        temples += 1;
-        templecost *= 1.15;
-        break;
-      case "wizard":
-        wizards += 1;
-        wizardcost *= 1.15;
-        break;
-      case "shipment":
-        shipments += 1;
-        shipmentcost *= 1.15;
-        break;
-      case "lab":
-        labs += 1;
-        labcost *= 1.15;
-        break;
-      default:
-        console.log("Invalid building type");
+function buy_cursor() {
+    if (cookies>=cursorcost) {
+        cookies-=cursorcost;
+        cursors+=1;
+        cursorcost*=1.15;
     }
     update();
-  }
 }
+function buy_grandma() {
+    if (cookies>=grandmacost) {
+        cookies-=grandmacost;
+        grandmas+=1;
+        grandmacost*=1.15;
+    }
+    update();
+}
+function buy_farm() {
+    if (cookies>=farmcost) {
+        cookies-=farmcost;
+        farms+=1;
+        farmcost*=1.15;
+    }
+    update();
+}
+function buy_mine() {
+    if (cookies>=minecost) {
+        cookies-=minecost;
+        mines+=1;
+        minecost*=1.15;
+    }
+    update();
+}
+function buy_factory() {
+    if (cookies>=factorycost) {
+        cookies-=factorycost;
+        factories+=1;
+        factorycost*=1.15;
+    }
+    update();
+}
+function buy_bank() {
+    if (cookies>=bankcost) {
+        cookies-=bankcost;
+        banks+=1;
+        bankcost*=1.15;
+    }
+    update();
+}
+function buy_temple() {
+    if (cookies>=templecost) {
+        cookies-=templecost;
+        temples+=1;
+        templecost*=1.15;
+    }
+    update();
+}
+function buy_wizard() {
+    if (cookies>=wizardcost) {
+        cookies-=wizardcost;
+        wizards+=1;
+        wizardcost*=1.15;
+    }
+    update();
+}
+function buy_shipment() {
+    if (cookies>=shipmentcost) {
+        cookies-=shipmentcost;
+        shipments+=1;
+        shipmentcost*=1.15;
+    }
+    update();
+}
+function buy_lab() {
+    if (cookies>=labcost) {
+        cookies-=labcost;
+        labs+=1;
+        labcost*=1.15;
+    }
+    update();
+}
+
+
 var upgrades=[];
 var upgradecost=[];
 function newUpgrade(name, cost, x, y) {
