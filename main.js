@@ -116,3 +116,10 @@ function buyBuilding(buildingType, buildingCost) {
     update();
   }
 }
+var upgrades=[];
+var upgradecost=[];
+function newUpgrade(name, cost, x, y) {
+	upgrades.push(name);
+	upgradecost.push(cost);
+}
+newUpgrade("My first upgrade", 100, 0, 0);
