@@ -45,17 +45,6 @@ function update() {
 	document.getElementById("shipment_btn").innerHTML = "You have "+shipments+" shipments. Buy one for "+(Math.round(shipmentcost+0.49))+" cookies.";
 	document.getElementById("lab_btn").innerHTML = "You have "+labs+" alchemy labs. Buy one for "+(Math.round(labcost+0.49))+" cookies.";
 	
-	buyBuilding("cursor", cursorcost);
-	buyBuilding("grandma", grandmacost);
-	buyBuilding("farm", farmcost);
-	buyBuilding("mine", minecost);
-	buyBuilding("factory", factorycost);
-	buyBuilding("bank", bankcost);
-	buyBuilding("temple", templecost);
-	buyBuilding("wizard", wizardcost);
-	buyBuilding("shipment", shipmentcost);
-	buyBuilding("lab", labcost);
-
 	cookies+=cps/10;
 	totalcookies+=cps/10;
 }
