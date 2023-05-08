@@ -24,13 +24,21 @@ var wizardcost=330000000;
 var shipmentcost=5100000000;
 var labcost=75000000000;
 
-var numberlist=[cookies, totalcookies, cps, 
-		cursors, grandmas, farms, mines, factories, banks, temples, wizards, shipments, labs,
-		cursorcost, grandmacost, farmcost, minecost, factorycost, bankcost, templecost, wizardcost, shipmentcost, labcost]
+var cursormulti=1;
+var grandmamulti=1;
+var farmmulti=1;
+var minemulti=1;
+var factorymulti=1;
+var bankmulti=1;
+var templemulti=1;
+var wizardmulti=1;
+var shipmentmulti=1;
+var labmulti=1;
+
 setInterval(update, 100);
 
 function update() {
-	cps=cursors*0.1+grandmas+farms*8+mines*47+factories*260+banks*1400+temples*7800+wizards*44000+shipments*260000+labs*1600000;
+	cps=cursors*0.1*cursormulti+grandmas+farms*8+mines*47+factories*260+banks*1400+temples*7800+wizards*44000+shipments*260000+labs*1600000;
 	
 	document.getElementById("cookie_counter").innerHTML = "Cookies: "+Math.round(cookies-0.5);  
 	document.getElementById("cps_counter").innerHTML = "CPS: "+Math.round(cps*10)/10;
@@ -136,3 +144,9 @@ function buy_lab() {
     update();
 }
 
+function upg1() {
+    if (cookies>=100) {
+        cookies-=100;
+	   cursormulti*=2;
+    }
+}
