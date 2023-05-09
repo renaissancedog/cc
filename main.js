@@ -37,6 +37,10 @@ var labmulti=1;
 
 setInterval(update, 100);
 
+const version = "0.5.9.1632";
+const myParagraph = document.querySelector("#my-paragraph");
+document.getElementById("version").innerHTML = "Version "+version;
+
 function update() {
 	cps=cursors*0.1*cursormulti+grandmas+farms*8+mines*47+factories*260+banks*1400+temples*7800+wizards*44000+shipments*260000+labs*1600000;
 	
