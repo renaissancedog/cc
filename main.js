@@ -150,7 +150,7 @@ function upg1() {
 	   cursormulti*=2;
     }
 }
-var buttons = document.querySelectorAll('upg');
+var buttons = document.querySelectorAll('.upg');
 var infoBox = document.createElement('div');
 infoBox.id = 'infoBox';
 document.body.appendChild(infoBox);
