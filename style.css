@@ -18,3 +18,11 @@
   width: 50px;
   box-sizing: border-box;
 }
+#infoBox {
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  display: none;
+}
+
