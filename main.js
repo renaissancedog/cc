@@ -150,3 +150,19 @@ function upg1() {
 	   cursormulti*=2;
     }
 }
+var buttons = document.querySelectorAll('upg');
+var infoBox = document.createElement('div');
+infoBox.id = 'infoBox';
+document.body.appendChild(infoBox);
+
+buttons.forEach(function(button) {
+  button.addEventListener('mouseover', function() {
+    var infoText = this.getAttribute('data-info');
+    infoBox.innerHTML = infoText;
+    infoBox.style.display = 'block';
+  });
+
+  button.addEventListener('mouseout', function() {
+    infoBox.style.display = 'none';
+  });
+});
