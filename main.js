@@ -153,7 +153,6 @@ function upg1() {
 var buttons = document.querySelectorAll('.upg');
 var infoBox = document.createElement('div');
 infoBox.id = 'infoBox';
-document.body.appendChild(infoBox);
 
 buttons.forEach(function(button) {
   button.addEventListener('mouseover', function() {
