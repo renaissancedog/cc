@@ -95,7 +95,7 @@ function buy_farm() {
 function buy_mine() {
     if (cookies>=minecost) {
         cookies-=minecost;
-        mines+=1;
+    	mines+=1;
         minecost*=1.15;
     }
     update();
@@ -103,7 +103,7 @@ function buy_mine() {
 function buy_factory() {
     if (cookies>=factorycost) {
         cookies-=factorycost;
-        factories+=1;
+    	factories+=1;
         factorycost*=1.15;
     }
     update();
@@ -155,10 +155,16 @@ function upg(id) {
         	cookies-=100;
 	   		cursormulti*=2;
 		} else {
-			console.log("LOL skill issue");	
+			console.log("Out of cookies.");	
 		}	
-    } else {
-		console.log("Upgrade not found skill issue");	
+    } else if (upg==2) {
+		if (cookies>=500) {
+        	cookies-=500;
+	   		cursormulti*=2;
+		} else {
+			console.log("Out of cookies.");		
+	} else {
+		console.log("Upgrade not found.");
 	}	
 }
 var buttons = document.querySelectorAll('.upg');
