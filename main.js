@@ -58,7 +58,7 @@ function update() {
 	totalcookies+=cps/10;
 }
 function draw() {
-	const version = "0.5.9.2037";
+	const version = "0.5.10.1750";
 	const myParagraph = document.querySelector("#my-paragraph");
 	document.getElementById("version").innerHTML = "Version "+version;
 }
@@ -154,6 +154,7 @@ function upg(id) {
 		if (cookies>=100) {
         	cookies-=100;
 	   		cursormulti*=2;
+			document.getElementById("upg1").remove();
 		} else {
 			console.log("Out of cookies.");	
 		}	
@@ -161,6 +162,7 @@ function upg(id) {
 		if (cookies>=500) {
         	cookies-=500;
 	   		cursormulti*=2;
+			document.getElementById("upg2").remove();
 		} else {
 			console.log("Out of cookies.");	
 		}
