@@ -163,23 +163,8 @@ function upg(id) {
 	   		cursormulti*=2;
 		} else {
 			console.log("Out of cookies.");	
-		}	
+		}
     } else {
 		console.log('no upgrade found");
 	}
 }
-var buttons = document.querySelectorAll('.upg');
-var infoBox = document.createElement('div');
-infoBox.id = 'infoBox';
-
-buttons.forEach(function(button) {
-  button.addEventListener('mouseover', function() {
-    var infoText = this.getAttribute('data-info');
-    infoBox.innerHTML = infoText;
-    infoBox.style.display = 'block';
-  });
-
-  button.addEventListener('mouseout', function() {
-    infoBox.style.display = 'none';
-  });
-});
