@@ -149,11 +149,17 @@ function buy_lab() {
     update();
 }
 
-function upg1() {
-    if (cookies>=100) {
-        cookies-=100;
-	   cursormulti*=2;
-    }
+function upg(id) {
+    if (upg==1) {
+		if (cookies>=100) {
+        	cookies-=100;
+	   		cursormulti*=2;
+		} else {
+			console.log("LOL skill issue");	
+		}	
+    } else {
+		console.log("Upgrade not found skill issue");	
+	}	
 }
 var buttons = document.querySelectorAll('.upg');
 var infoBox = document.createElement('div');
