@@ -162,10 +162,11 @@ function upg(id) {
         	cookies-=500;
 	   		cursormulti*=2;
 		} else {
-			console.log("Out of cookies.");		
-	} else {
-		console.log("Upgrade not found.");
-	}	
+			console.log("Out of cookies.");	
+		}	
+    } else {
+		console.log('no upgrade found");
+	}
 }
 var buttons = document.querySelectorAll('.upg');
 var infoBox = document.createElement('div');
