@@ -150,14 +150,14 @@ function buy_lab() {
 }
 
 function upg(id) {
-    if (upg==1) {
+    if (id==1) {
 		if (cookies>=100) {
         	cookies-=100;
 	   		cursormulti*=2;
 		} else {
 			console.log("Out of cookies.");	
 		}	
-    } else if (upg==2) {
+    } else if (id==2) {
 		if (cookies>=500) {
         	cookies-=500;
 	   		cursormulti*=2;
