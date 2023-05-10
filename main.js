@@ -36,10 +36,7 @@ var shipmentmulti=1;
 var labmulti=1;
 
 setInterval(update, 100);
-
-const version = "0.5.9.1632";
-const myParagraph = document.querySelector("#my-paragraph");
-document.getElementById("version").innerHTML = "Version "+version;
+setInterval(draw, 1000);
 
 function update() {
 	cps=cursors*0.1*cursormulti+grandmas+farms*8+mines*47+factories*260+banks*1400+temples*7800+wizards*44000+shipments*260000+labs*1600000;
@@ -60,7 +57,11 @@ function update() {
 	cookies+=cps/10;
 	totalcookies+=cps/10;
 }
-
+function draw() {
+	const version = "0.5.9.2037";
+	const myParagraph = document.querySelector("#my-paragraph");
+	document.getElementById("version").innerHTML = "Version "+version;
+}
 function clicked() {
     cookies+=1;
     totalcookies+=1;
