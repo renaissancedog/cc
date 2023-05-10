@@ -165,6 +165,6 @@ function upg(id) {
 			console.log("Out of cookies.");	
 		}
     } else {
-		console.log('no upgrade found");
+		console.log("no upgrade found");
 	}
 }
