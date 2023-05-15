@@ -1,4 +1,4 @@
-var VERSION=0.5.15.1321
+var version=0.5.15.1321;
 var cookies=0;
 var totalcookies=0;
 var cps=0;
@@ -40,7 +40,7 @@ setInterval(update, 100);
 setInterval(draw, 1000);
 
 function update() {
-	cps=cursors*0.1*cursormulti+grandmas*grandmamulti+farms*8*farmmulti+mines*47*minemulti+factories*260*factorymulti+banks*1400*bankmulti+temples*7800*templemulti+wizards*440008wizardmulti+shipments*260000*shipmentmulti+labs*labmulti*1600000;
+	cps=cursors*0.1*cursormulti+grandmas*grandmamulti+farms*8*farmmulti+mines*47*minemulti+factories*260*factorymulti+banks*1400*bankmulti+temples*7800*templemulti+wizards*44000*wizardmulti+shipments*260000*shipmentmulti+labs*labmulti*1600000;
 	
 	document.getElementById("cookie_counter").innerHTML = "Cookies: "+Math.round(cookies-0.5);  
 	document.getElementById("cps_counter").innerHTML = "CPS: "+Math.round(cps*10)/10;
@@ -60,7 +60,7 @@ function update() {
 }
 function draw() {
 	const myParagraph = document.querySelector("#my-paragraph");
-	document.getElementById("version").innerHTML = "Version "+VERSION;
+	document.getElementById("version").innerHTML = "Version "+version;
 }
 function clicked() {
     cookies+=1;
