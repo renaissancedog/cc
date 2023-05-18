@@ -1,4 +1,4 @@
-var version="0.5.16.0921";
+var version="0.5.18.0951";
 var cookies=0;
 var totalcookies=0;
 var cps=0;
