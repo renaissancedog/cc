@@ -150,7 +150,7 @@ function buy_lab() {
 }
 
 function upg(id) {
-    if (id==1) {
+    if (id==0) {
 		if (cookies>=100) {
         	cookies-=100;
 	   		cursormulti*=2;
@@ -158,7 +158,7 @@ function upg(id) {
 		} else {
 			console.log("Out of cookies.");	
 		}	
-    } else if (id==2) {
+    } else if (id==1) {
 		if (cookies>=500) {
         	cookies-=500;
 	   		cursormulti*=2;
