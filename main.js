@@ -16,6 +16,11 @@ function formatNumber(val) {
   return val.toString();
 }
 
+function processNumbers(list, callback) {
+  list.forEach(callback);
+}
+
+
 //VARIABLES
 var version="0.5.21.1040";
 var cookies=0;
@@ -55,6 +60,9 @@ var wizardmulti=1;
 var shipmentmulti=1;
 var labmulti=1;
 
+var numbers=[cookies, totalcookies, cps, cursors, grandmas, mines, farms, factories, banks, temples, wizards, shipments, labs, 
+	     cursormulti, grandmamulti, farmmulti, minemulti, factorymulti, bankmulti, templemulti, wizardmulti, shipmentmulti, labmulti, 
+	     cursorcost, grandmacost, farmcost, minecost, factorycost, bankcost, templecost, wizardcost, shipmentcost, labcost];
 //LOOPS
 setInterval(draw, 100);
 function update() {
@@ -79,6 +87,7 @@ function update() {
 function draw() {
 	const myParagraph = document.querySelector("#my-paragraph");
 	q("version").innerHTML = "Version "+version;
+	//processNumbers(numbers, formatNumber);
 	update();
 }
 
