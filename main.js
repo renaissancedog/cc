@@ -23,7 +23,7 @@ function processNumbers(list, callback) {
 
 
 //VARIABLES
-var version = "0.5.21.1040";
+var version = "0.5.21.1357 beta";
 var cookies = 0;
 var totalcookies = 0;
 var cps = 0;
