@@ -1,4 +1,8 @@
-var version="0.5.18.0951";
+function q(id) {
+	return document.getElementById(id);	
+}
+
+var version="0.5.21.1040";
 var cookies=0;
 var totalcookies=0;
 var cps=0;
