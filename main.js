@@ -1,3 +1,4 @@
+//COOL FUNCTIONS
 function q(id) {
 	return document.getElementById(id);	
 }
@@ -15,7 +16,7 @@ function formatNumber(val) {
   return val.toString();
 }
 
-
+//VARIABLES
 var version="0.5.21.1040";
 var cookies=0;
 var totalcookies=0;
@@ -54,9 +55,8 @@ var wizardmulti=1;
 var shipmentmulti=1;
 var labmulti=1;
 
-setInterval(update, 100);
-setInterval(draw, 1000);
-
+//LOOPS
+setInterval(draw, 100);
 function update() {
 	cps=cursors*0.1*cursormulti+grandmas*grandmamulti+farms*8*farmmulti+mines*47*minemulti+factories*260*factorymulti+banks*1400*bankmulti+temples*7800*templemulti+wizards*44000*wizardmulti+shipments*260000*shipmentmulti+labs*labmulti*1600000;
 	
@@ -79,13 +79,17 @@ function update() {
 function draw() {
 	const myParagraph = document.querySelector("#my-paragraph");
 	q("version").innerHTML = "Version "+version;
+	update();
 }
+
+//ONCLICKS
+
 function clicked() {
     cookies+=1;
     totalcookies+=1;
     update();
 }
-
+//UPGRADES(need to make more efficent)
 function buy_cursor() {
     if (cookies>=cursorcost) {
         cookies-=cursorcost;
@@ -166,6 +170,18 @@ function buy_lab() {
     }
     update();
 }
+//UPGRADES
+class Upgrade {
+  constructor(name, cost, type, benefit, id) {
+    this.cost = cost;
+    this.type = type;
+    this.benefit = benefit;
+	this.name = name;
+	this.id = id;
+  }
+}
+const upg1 = new Upgrade("My First Upgrade", 100, 0, 2, 0);
+const upg2 = new Upgrade("My Second Upgrade", 500, 0, 2, 1);
 
 function upg(id) {
     if (id==0) {
