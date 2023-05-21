@@ -46,25 +46,25 @@ setInterval(draw, 1000);
 function update() {
 	cps=cursors*0.1*cursormulti+grandmas*grandmamulti+farms*8*farmmulti+mines*47*minemulti+factories*260*factorymulti+banks*1400*bankmulti+temples*7800*templemulti+wizards*44000*wizardmulti+shipments*260000*shipmentmulti+labs*labmulti*1600000;
 	
-	document.getElementById("cookie_counter").innerHTML = "Cookies: "+Math.round(cookies-0.5);  
-	document.getElementById("cps_counter").innerHTML = "CPS: "+Math.round(cps*10)/10;
-	document.getElementById("cursor_btn").innerHTML = "You have "+cursors+" cursors. Buy one for "+(Math.round(cursorcost+0.49))+" cookies.";
-	document.getElementById("grandma_btn").innerHTML = "You have "+grandmas+" grandmas. Buy one for "+(Math.round(grandmacost+0.49))+" cookies.";
-	document.getElementById("farm_btn").innerHTML = "You have "+farms+" farms. Buy one for "+(Math.round(farmcost+0.49))+" cookies.";
-	document.getElementById("mine_btn").innerHTML = "You have "+mines+" mines. Buy one for "+(Math.round(minecost+0.49))+" cookies.";
-	document.getElementById("factory_btn").innerHTML = "You have "+factories+" factories. Buy one for "+(Math.round(factorycost+0.49))+" cookies.";
-	document.getElementById("bank_btn").innerHTML = "You have "+banks+" banks. Buy one for "+(Math.round(bankcost+0.49))+" cookies.";
-	document.getElementById("temple_btn").innerHTML = "You have "+temples+" temples. Buy one for "+(Math.round(templecost+0.49))+" cookies.";
-	document.getElementById("wizard_btn").innerHTML = "You have "+wizards+" wizards. Buy one for "+(Math.round(wizardcost+0.49))+" cookies.";
-	document.getElementById("shipment_btn").innerHTML = "You have "+shipments+" shipments. Buy one for "+(Math.round(shipmentcost+0.49))+" cookies.";
-	document.getElementById("lab_btn").innerHTML = "You have "+labs+" alchemy labs. Buy one for "+(Math.round(labcost+0.49))+" cookies.";
+	q("cookie_counter").innerHTML = "Cookies: "+Math.round(cookies-0.5);  
+	q("cps_counter").innerHTML = "CPS: "+Math.round(cps*10)/10;
+	q("cursor_btn").innerHTML = "You have "+cursors+" cursors. Buy one for "+(Math.round(cursorcost+0.49))+" cookies.";
+	q("grandma_btn").innerHTML = "You have "+grandmas+" grandmas. Buy one for "+(Math.round(grandmacost+0.49))+" cookies.";
+	q("farm_btn").innerHTML = "You have "+farms+" farms. Buy one for "+(Math.round(farmcost+0.49))+" cookies.";
+	q("mine_btn").innerHTML = "You have "+mines+" mines. Buy one for "+(Math.round(minecost+0.49))+" cookies.";
+	q("factory_btn").innerHTML = "You have "+factories+" factories. Buy one for "+(Math.round(factorycost+0.49))+" cookies.";
+	q("bank_btn").innerHTML = "You have "+banks+" banks. Buy one for "+(Math.round(bankcost+0.49))+" cookies.";
+	q("temple_btn").innerHTML = "You have "+temples+" temples. Buy one for "+(Math.round(templecost+0.49))+" cookies.";
+	q("wizard_btn").innerHTML = "You have "+wizards+" wizards. Buy one for "+(Math.round(wizardcost+0.49))+" cookies.";
+	q("shipment_btn").innerHTML = "You have "+shipments+" shipments. Buy one for "+(Math.round(shipmentcost+0.49))+" cookies.";
+	q("lab_btn").innerHTML = "You have "+labs+" alchemy labs. Buy one for "+(Math.round(labcost+0.49))+" cookies.";
 	
 	cookies+=cps/10;
 	totalcookies+=cps/10;
 }
 function draw() {
 	const myParagraph = document.querySelector("#my-paragraph");
-	document.getElementById("version").innerHTML = "Version "+version;
+	q("version").innerHTML = "Version "+version;
 }
 function clicked() {
     cookies+=1;
