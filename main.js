@@ -27,6 +27,17 @@ var cookies=0;
 var totalcookies=0;
 var cps=0;
 
+class Building {
+	constructor(name, cost, cps, id) {
+		this.name = name;
+		this.cost = cost;
+		this.cps = cps;
+		this.id = id;
+  	}
+}
+const cursor = new Building("Cursor", 15, 0.1, 0);
+const grandma = new Building("Grandma", 100, 1, 1);
+
 var cursors=0;
 var grandmas=0;
 var farms=0;
@@ -59,6 +70,7 @@ var templemulti=1;
 var wizardmulti=1;
 var shipmentmulti=1;
 var labmulti=1;
+
 
 var numbers=[cookies, totalcookies, cps, cursors, grandmas, mines, farms, factories, banks, temples, wizards, shipments, labs, 
 	     cursormulti, grandmamulti, farmmulti, minemulti, factorymulti, bankmulti, templemulti, wizardmulti, shipmentmulti, labmulti, 
