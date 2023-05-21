@@ -1,6 +1,20 @@
 function q(id) {
 	return document.getElementById(id);	
 }
+function formatNumber(val) {
+  if (!isFinite(val)) return 'Infinity';
+  if (val >= 1000000) {
+    val /= 1000;
+    var suffix = '';
+    while (Math.round(val) >= 1000) {
+      val /= 1000;
+      suffix += 'K';
+    }
+    return Math.round(val * 1000) / 1000 + suffix;
+  }
+  return val.toString();
+}
+
 
 var version="0.5.21.1040";
 var cookies=0;
