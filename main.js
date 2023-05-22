@@ -114,96 +114,56 @@ function clicked() {
 	totalcookies += 1;
 	update();
 }
-//UPGRADES(need to make more efficent)
+//BUILDING BUYING
+function buyItem(item, itemCost, itemQuantity) {
+    if (cookies >= itemCost) {
+        cookies -= itemCost;
+        itemQuantity += 1;
+        itemCost *= 1.15;
+    }
+    update();
+}
+
 function buy_cursor() {
-	if (cookies >= cursorcost) {
-		cookies -= cursorcost;
-		cursors += 1;
-		cursorcost *= 1.15;
-	}
-	update();
+    buyItem(cursors, cursorcost, cursors);
 }
 
 function buy_grandma() {
-	if (cookies >= grandmacost) {
-		cookies -= grandmacost;
-		grandmas += 1;
-		grandmacost *= 1.15;
-	}
-	update();
+    buyItem(grandmas, grandmacost, grandmas);
 }
 
 function buy_farm() {
-	if (cookies >= farmcost) {
-		cookies -= farmcost;
-		farms += 1;
-		farmcost *= 1.15;
-	}
-	update();
+    buyItem(farms, farmcost, farms);
 }
 
 function buy_mine() {
-	if (cookies >= minecost) {
-		cookies -= minecost;
-		mines += 1;
-		minecost *= 1.15;
-	}
-	update();
+    buyItem(mines, minecost, mines);
 }
 
 function buy_factory() {
-	if (cookies >= factorycost) {
-		cookies -= factorycost;
-		factories += 1;
-		factorycost *= 1.15;
-	}
-	update();
+    buyItem(factories, factorycost, factories);
 }
 
 function buy_bank() {
-	if (cookies >= bankcost) {
-		cookies -= bankcost;
-		banks += 1;
-		bankcost *= 1.15;
-	}
-	update();
+    buyItem(banks, bankcost, banks);
 }
 
 function buy_temple() {
-	if (cookies >= templecost) {
-		cookies -= templecost;
-		temples += 1;
-		templecost *= 1.15;
-	}
-	update();
+    buyItem(temples, templecost, temples);
 }
 
 function buy_wizard() {
-	if (cookies >= wizardcost) {
-		cookies -= wizardcost;
-		wizards += 1;
-		wizardcost *= 1.15;
-	}
-	update();
+    buyItem(wizards, wizardcost, wizards);
 }
 
 function buy_shipment() {
-	if (cookies >= shipmentcost) {
-		cookies -= shipmentcost;
-		shipments += 1;
-		shipmentcost *= 1.15;
-	}
-	update();
+    buyItem(shipments, shipmentcost, shipments);
 }
 
 function buy_lab() {
-	if (cookies >= labcost) {
-		cookies -= labcost;
-		labs += 1;
-		labcost *= 1.15;
-	}
-	update();
+    buyItem(labs, labcost, labs);
 }
+
 //UPGRADES
 var upgarray=[];
 function Upgrade(cost, type, benefit, name, id) {
