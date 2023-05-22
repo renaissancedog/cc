@@ -36,8 +36,8 @@ class Building {
 		this.id = id;
 	}
 }
-const cursor = new Building("Cursor", 15, 0.1, 0);
-const grandma = new Building("Grandma", 100, 1, 1);
+//const cursor = new Building("Cursor", 15, 0.1, 0);
+//const grandma = new Building("Grandma", 100, 1, 1);
 
 var cursors = 0;
 var grandmas = 0;
@@ -165,7 +165,7 @@ function buy_lab() {
 }
 
 //UPGRADES
-var upgarray=[];
+//var upgarray=[];
 function Upgrade(cost, type, benefit, name, id) {
 	this.cost = cost;
 	this.type = type;
@@ -174,8 +174,8 @@ function Upgrade(cost, type, benefit, name, id) {
 	this.id = id;
 }
 
-const upg1 = new Upgrade("My First Upgrade", 100, 0, 2, 0);
-const upg2 = new Upgrade("My Second Upgrade", 500, 0, 2, 1);
+//const upg1 = new Upgrade("My First Upgrade", 100, 0, 2, 0);
+//const upg2 = new Upgrade("My Second Upgrade", 500, 0, 2, 1);
 
 function upg(id) {
 	if (id == 0) {
