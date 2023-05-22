@@ -23,7 +23,7 @@ function processNumbers(list, callback) {
 
 
 //VARIABLES
-var version = "0.5.21.1357 beta";
+var version = "0.5.22.1737 beta";
 var cookies = 0;
 var totalcookies = 0;
 var cps = 0;
@@ -78,7 +78,7 @@ var numbers = [cookies, totalcookies, cps, cursors, grandmas, mines, farms, fact
 	cursorcost, grandmacost, farmcost, minecost, factorycost, bankcost, templecost, wizardcost, shipmentcost, labcost
 ];
 //LOOPS
-setInterval(draw, 100);
+setInterval(update, 100);
 
 function update() {
 	cps = cursors * 0.1 * cursormulti + grandmas * grandmamulti + farms * 8 * farmmulti + mines * 47 * minemulti + factories * 260 * factorymulti + banks * 1400 * bankmulti + temples * 7800 * templemulti + wizards * 44000 * wizardmulti + shipments * 260000 * shipmentmulti + labs * labmulti * 1600000;
@@ -98,13 +98,10 @@ function update() {
 
 	cookies += cps / 10;
 	totalcookies += cps / 10;
-}
-
-function draw() {
+	
 	const myParagraph = document.querySelector("#my-paragraph");
 	q("version").innerHTML = "Version " + version;
 	//processNumbers(numbers, formatNumber);
-	update();
 }
 
 //ONCLICKS
