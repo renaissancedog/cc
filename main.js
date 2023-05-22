@@ -205,15 +205,15 @@ function buy_lab() {
 	update();
 }
 //UPGRADES
-class Upgrade {
-	constructor(name, cost, type, benefit, id) {
-		this.cost = cost;
-		this.type = type;
-		this.benefit = benefit;
-		this.name = name;
-		this.id = id;
-	}
+var upgarray=[];
+function Upgrade(cost, type, benefit, name, id) {
+	this.cost = cost;
+	this.type = type;
+	this.benefit = benefit;
+	this.name = name;
+	this.id = id;
 }
+
 const upg1 = new Upgrade("My First Upgrade", 100, 0, 2, 0);
 const upg2 = new Upgrade("My Second Upgrade", 500, 0, 2, 1);
 
