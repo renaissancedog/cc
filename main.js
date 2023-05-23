@@ -3,41 +3,11 @@ function q(id) {
 	return document.getElementById(id);
 }
 
-function formatNumber(val) {
-	if (!isFinite(val)) return 'Infinity';
-	if (val >= 1000000) {
-		val /= 1000;
-		var suffix = '';
-		while (Math.round(val) >= 1000) {
-			val /= 1000;
-			suffix += 'K';
-		}
-		return Math.round(val * 1000) / 1000 + suffix;
-	}
-	return val.toString();
-}
-
-function processNumbers(list, callback) {
-	list.forEach(callback);
-}
-
-
 //VARIABLES
 var version = "0.5.22.1947 beta";
 var cookies = 0;
 var totalcookies = 0;
 var cps = 0;
-
-class Building {
-	constructor(name, cost, cps, id) {
-		this.name = name;
-		this.cost = cost;
-		this.cps = cps;
-		this.id = id;
-	}
-}
-//const cursor = new Building("Cursor", 15, 0.1, 0);
-//const grandma = new Building("Grandma", 100, 1, 1);
 
 var cursors = 0;
 var grandmas = 0;
@@ -75,8 +45,7 @@ var labmulti = 1;
 
 var numbers = [cookies, totalcookies, cps, cursors, grandmas, mines, farms, factories, banks, temples, wizards, shipments, labs,
 	cursormulti, grandmamulti, farmmulti, minemulti, factorymulti, bankmulti, templemulti, wizardmulti, shipmentmulti, labmulti,
-	cursorcost, grandmacost, farmcost, minecost, factorycost, bankcost, templecost, wizardcost, shipmentcost, labcost
-];
+	cursorcost, grandmacost, farmcost, minecost, factorycost, bankcost, templecost, wizardcost, shipmentcost, labcost];
 //LOOPS
 setInterval(update, 100);
 
@@ -100,96 +69,97 @@ function update() {
 	totalcookies += cps / 10;
 
 	q("version").innerHTML = "Version " + version;
-	//processNumbers(numbers, formatNumber);
 }
 
 //ONCLICKS
-
 function clicked() {
 	cookies += 1;
 	totalcookies += 1;
 	update();
 }
 //BUILDING BUYING
-function buyItem(cost, quantity) {
-	if (cookies >= cost) {
-		quantity += 1;
-	}
-	update();
-	return quantity;
-}
-
-function itemCost(cost) {
-	if (cookies >= cost) {
-		cookies -= cost;
-		cost *= 1.15;
-	}
-	update();
-	return cost;
-}
-
 function buy_cursor() {
-	cursorcost = itemCost(cursorcost);
-	cursors = buyItem(cursorcost, cursors);
+    if (cookies>=cursorcost) {
+        cookies-=cursorcost;
+        cursors+=1;
+        cursorcost*=1.15;
+    }
+    update();
 }
-
 function buy_grandma() {
-	grandmacost = itemCost(grandmacost);
-	grandmas = buyItem(grandmacost, grandmas);
+    if (cookies>=grandmacost) {
+        cookies-=grandmacost;
+        grandmas+=1;
+        grandmacost*=1.15;
+    }
+    update();
 }
-
 function buy_farm() {
-	farmcost = itemCost(farmcost);
-	farms = buyItem(farmcost, farms);
+    if (cookies>=farmcost) {
+        cookies-=farmcost;
+        farms+=1;
+        farmcost*=1.15;
+    }
+    update();
 }
-
 function buy_mine() {
-	minecost = itemCost(minecost);
-	mines = buyItem(minecost, mines);
+    if (cookies>=minecost) {
+        cookies-=minecost;
+    	mines+=1;
+        minecost*=1.15;
+    }
+    update();
 }
-
 function buy_factory() {
-	factorycost = itemCost(factorycost);
-	factories = buyItem(factorycost, factories);
+    if (cookies>=factorycost) {
+        cookies-=factorycost;
+    	factories+=1;
+        factorycost*=1.15;
+    }
+    update();
 }
-
 function buy_bank() {
-	bankcost = itemCost(bankcost);
-	banks = buyItem(bankcost, banks);
+    if (cookies>=bankcost) {
+        cookies-=bankcost;
+        banks+=1;
+        bankcost*=1.15;
+    }
+    update();
 }
-
 function buy_temple() {
-	templecost = itemCost(templecost);
-	temples = buyItem(templecost, temples);
+    if (cookies>=templecost) {
+        cookies-=templecost;
+        temples+=1;
+        templecost*=1.15;
+    }
+    update();
 }
-
 function buy_wizard() {
-	wizardcost = itemCost(wizardcost);
-	wizards = buyItem(wizardcost, wizards);
+    if (cookies>=wizardcost) {
+        cookies-=wizardcost;
+        wizards+=1;
+        wizardcost*=1.15;
+    }
+    update();
 }
-
 function buy_shipment() {
-	shipmentcost = itemCost(shipmentcost);
-	shipments = buyItem(shipmentcost, shipments);
+    if (cookies>=shipmentcost) {
+        cookies-=shipmentcost;
+        shipments+=1;
+        shipmentcost*=1.15;
+    }
+    update();
 }
-
 function buy_lab() {
-	labcost = itemCost(labcost);
-	labs = buyItem(labcost, labs);
+    if (cookies>=labcost) {
+        cookies-=labcost;
+        labs+=1;
+        labcost*=1.15;
+    }
+    update();
 }
 
 //UPGRADES
-function Upgrade(cost, type, benefit, name, id) {
-	this.cost = cost;
-	this.type = type;
-	this.benefit = benefit;
-	this.name = name;
-	this.id = id;
-}
-
-//const upg1 = new Upgrade("My First Upgrade", 100, 0, 2, 0);
-//const upg2 = new Upgrade("My Second Upgrade", 500, 0, 2, 1);
-
 function upg(id) {
 	if (id == 0) {
 		if (cookies >= 100) {
