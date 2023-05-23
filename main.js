@@ -1,10 +1,11 @@
+var version = "b.5.23.2023.a";
+
 //COOL FUNCTIONS
 function q(id) {
 	return document.getElementById(id);
 }
 
 //VARIABLES
-var version = "0.5.22.1947 beta";
 var cookies = 0;
 var totalcookies = 0;
 var cps = 0;
@@ -78,6 +79,14 @@ function clicked() {
 	update();
 }
 //BUILDING BUYING
+function buy_building(cost, item) {
+	if (cookies>=cost) {
+        cookies-=cost;
+        item+=1;
+        cost*=1.15;
+    }
+    update();	
+}
 function buy_cursor() {
     if (cookies>=cursorcost) {
         cookies-=cursorcost;
@@ -160,22 +169,18 @@ function buy_lab() {
 }
 
 //UPGRADES
-function upg(id) {
-	if (id == 0) {
-		if (cookies >= 100) {
-			cookies -= 100;
-			cursormulti *= 2;
-			document.getElementById("upg1").remove();
-		} else {
-			console.log("Out of cookies.");
+function Upgrade(cost, multi, upgid, id) {
+	this.cost = cost;
+    this.multi = multi;
+    this.upgid = upgid;
+	this.id = id;
+	this.upgrade=function() {
+		if (cookies>cost) {
+			cookies-=cost;
+			cursormulti*=2;
+			q(this).remove();
 		}
-	} else if (id == 1) {
-		if (cookies >= 500) {
-			cookies -= 500;
-			cursormulti *= 2;
-			document.getElementById("upg2").remove();
-		} else {
-			console.log("Out of cookies.");
-		}
-	}
+	}		 
 }
+var upg0=new Upgrade(100, 2, 0);
+var upg1=new Upgrade(500, 2, 0);
