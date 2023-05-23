@@ -9,6 +9,7 @@ function q(id) {
 var cookies = 0;
 var totalcookies = 0;
 var cps = 0;
+var clickmulti=1;
 
 var cursors = 0;
 var grandmas = 0;
@@ -74,8 +75,8 @@ function update() {
 
 //ONCLICKS
 function clicked() {
-	cookies += 1;
-	totalcookies += 1;
+	cookies += clickmulti;
+	totalcookies += clickmulti;
 	update();
 }
 //BUILDING BUYING
@@ -175,9 +176,10 @@ function Upgrade(cost, multi, upgid, id) {
     this.upgid = upgid;
 	this.id = id;
 	this.upgrade=function() {
-		if (cookies>cost) {
+		if (cookies>=cost) {
 			cookies-=cost;
 			cursormulti*=2;
+			clickmulti*=2;
 			q(this).remove();
 		}
 	}		 
