@@ -23,7 +23,7 @@ function processNumbers(list, callback) {
 
 
 //VARIABLES
-var version = "0.5.22.1737 beta";
+var version = "0.5.22.1947 beta";
 var cookies = 0;
 var totalcookies = 0;
 var cps = 0;
@@ -98,8 +98,7 @@ function update() {
 
 	cookies += cps / 10;
 	totalcookies += cps / 10;
-	
-	const myParagraph = document.querySelector("#my-paragraph");
+
 	q("version").innerHTML = "Version " + version;
 	//processNumbers(numbers, formatNumber);
 }
@@ -112,57 +111,74 @@ function clicked() {
 	update();
 }
 //BUILDING BUYING
-function buyItem(item, itemCost, itemQuantity) {
-    if (cookies >= itemCost) {
-        cookies -= itemCost;
-        itemQuantity += 1;
-        itemCost *= 1.15;
-    }
-    update();
+function buyItem(cost, quantity) {
+	if (cookies >= cost) {
+		quantity += 1;
+	}
+	update();
+	return quantity;
+}
+
+function itemCost(cost) {
+	if (cookies >= cost) {
+		cookies -= cost;
+		cost *= 1.15;
+	}
+	update();
+	return cost;
 }
 
 function buy_cursor() {
-    buyItem(cursors, cursorcost, cursors);
+	cursorcost = itemCost(cursorcost);
+	cursors = buyItem(cursorcost, cursors);
 }
 
 function buy_grandma() {
-    buyItem(grandmas, grandmacost, grandmas);
+	grandmacost = itemCost(grandmacost);
+	grandmas = buyItem(grandmacost, grandmas);
 }
 
 function buy_farm() {
-    buyItem(farms, farmcost, farms);
+	farmcost = itemCost(farmcost);
+	farms = buyItem(farmcost, farms);
 }
 
 function buy_mine() {
-    buyItem(mines, minecost, mines);
+	minecost = itemCost(minecost);
+	mines = buyItem(minecost, mines);
 }
 
 function buy_factory() {
-    buyItem(factories, factorycost, factories);
+	factorycost = itemCost(factorycost);
+	factories = buyItem(factorycost, factories);
 }
 
 function buy_bank() {
-    buyItem(banks, bankcost, banks);
+	bankcost = itemCost(bankcost);
+	banks = buyItem(bankcost, banks);
 }
 
 function buy_temple() {
-    buyItem(temples, templecost, temples);
+	templecost = itemCost(templecost);
+	temples = buyItem(templecost, temples);
 }
 
 function buy_wizard() {
-    buyItem(wizards, wizardcost, wizards);
+	wizardcost = itemCost(wizardcost);
+	wizards = buyItem(wizardcost, wizards);
 }
 
 function buy_shipment() {
-    buyItem(shipments, shipmentcost, shipments);
+	shipmentcost = itemCost(shipmentcost);
+	shipments = buyItem(shipmentcost, shipments);
 }
 
 function buy_lab() {
-    buyItem(labs, labcost, labs);
+	labcost = itemCost(labcost);
+	labs = buyItem(labcost, labs);
 }
 
 //UPGRADES
-//var upgarray=[];
 function Upgrade(cost, type, benefit, name, id) {
 	this.cost = cost;
 	this.type = type;
