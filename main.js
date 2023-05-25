@@ -172,15 +172,15 @@ function buy_lab() {
 //UPGRADES
 function Upgrade(cost, multi, upgid, id) {
 	this.cost = cost;
-    this.multi = multi;
-    this.upgid = upgid;
+    	this.multi = multi;
+    	this.upgid = upgid;
 	this.id = id;
 	this.upgrade=function() {
 		if (cookies>=cost) {
 			cookies-=cost;
 			cursormulti*=2;
 			clickmulti*=2;
-			q(this).remove();
+			this.remove();
 		}
 	}		 
 }
