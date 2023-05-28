@@ -184,5 +184,5 @@ function Upgrade(cost, multi, upgid, id) {
 		}
 	}		 
 }
-var upg0=new Upgrade(100, 2, 0);
-var upg1=new Upgrade(500, 2, 0);
+var upg0=new Upgrade(100, 2, 0, 0);
+var upg1=new Upgrade(500, 2, 1, 0);
