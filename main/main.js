@@ -55,14 +55,14 @@ function update() {
 	q("cps_counter").innerHTML = "CPS: " + Math.round(cps * 10) / 10;
 	q("cursor-data").innerHTML = "You have " + cursors + " cursors. Buy one for " + (Math.round(cursorcost + 0.49)) + " cookies.";
 	q("grandma-data").innerHTML = "You have " + grandmas + " grandmas. Buy one for " + (Math.round(grandmacost + 0.49)) + " cookies.";
-	q("farm_btn").innerHTML = "You have " + farms + " farms. Buy one for " + (Math.round(farmcost + 0.49)) + " cookies.";
-	q("mine_btn").innerHTML = "You have " + mines + " mines. Buy one for " + (Math.round(minecost + 0.49)) + " cookies.";
-	q("factory_btn").innerHTML = "You have " + factories + " factories. Buy one for " + (Math.round(factorycost + 0.49)) + " cookies.";
-	q("bank_btn").innerHTML = "You have " + banks + " banks. Buy one for " + (Math.round(bankcost + 0.49)) + " cookies.";
-	q("temple_btn").innerHTML = "You have " + temples + " temples. Buy one for " + (Math.round(templecost + 0.49)) + " cookies.";
-	q("wizard_btn").innerHTML = "You have " + wizards + " wizards. Buy one for " + (Math.round(wizardcost + 0.49)) + " cookies.";
-	q("shipment_btn").innerHTML = "You have " + shipments + " shipments. Buy one for " + (Math.round(shipmentcost + 0.49)) + " cookies.";
-	q("lab_btn").innerHTML = "You have " + labs + " alchemy labs. Buy one for " + (Math.round(labcost + 0.49)) + " cookies.";
+	q("farm-data").innerHTML = "You have " + farms + " farms. Buy one for " + (Math.round(farmcost + 0.49)) + " cookies.";
+	q("mine-data").innerHTML = "You have " + mines + " mines. Buy one for " + (Math.round(minecost + 0.49)) + " cookies.";
+	q("factory-data").innerHTML = "You have " + factories + " factories. Buy one for " + (Math.round(factorycost + 0.49)) + " cookies.";
+	q("bank-data").innerHTML = "You have " + banks + " banks. Buy one for " + (Math.round(bankcost + 0.49)) + " cookies.";
+	q("temple-data").innerHTML = "You have " + temples + " temples. Buy one for " + (Math.round(templecost + 0.49)) + " cookies.";
+	q("wizard-data").innerHTML = "You have " + wizards + " wizards. Buy one for " + (Math.round(wizardcost + 0.49)) + " cookies.";
+	q("shipment-data").innerHTML = "You have " + shipments + " shipments. Buy one for " + (Math.round(shipmentcost + 0.49)) + " cookies.";
+	q("lab-data").innerHTML = "You have " + labs + " alchemy labs. Buy one for " + (Math.round(labcost + 0.49)) + " cookies.";
 
 	cookies += cps / 10;
 	totalcookies += cps / 10;
