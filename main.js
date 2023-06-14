@@ -1,4 +1,4 @@
-var version = "b.5.23.2023.a";
+var version = "b.6.13.1943.a";
 
 //COOL FUNCTIONS
 function q(id) {
@@ -192,10 +192,9 @@ function Upgrade(cost, multi, upgid, id) {
 			cookies -= cost;
 			cursormulti *= 2;
 			clickmulti *= 2;
-			const removebtn = document.getElementById(this);
-			removebtn.remove();
+			id.remove();
 		}
 	}
 }
-var upg0 = new Upgrade(100, 2, 0, 0);
-var upg1 = new Upgrade(500, 2, 1, 0);
+var upg0 = new Upgrade(100, 2, 0, upg0);
+var upg1 = new Upgrade(500, 2, 1, upg1);
