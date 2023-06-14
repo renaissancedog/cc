@@ -18,13 +18,10 @@
   width: 80px;
   box-sizing: border-box;
 }
-button.shop {
-      overflow: hidden;
-  }
-  button.shop:hover {
-      overflow: visible;
-  }
-  button.shop .hidden-info {
+button.shop:hover {
+    overflow: visible;
+}
+  button.shop .object-data {
       position: absolute;
       top: 23px;
       width: 220px;
@@ -35,6 +32,6 @@ button.shop {
       transition: opacity .25s ease-in-out;
     color:#fff;
   }
-  button.shop:hover .hidden-info {
+  button.shop:hover .object-data {
       opacity: 1;
   }
