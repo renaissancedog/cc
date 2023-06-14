@@ -1,4 +1,4 @@
-var version = "b.6.13.1943.c";
+var version = "b.6.13.c";
 
 //COOL FUNCTIONS
 function q(id) {
