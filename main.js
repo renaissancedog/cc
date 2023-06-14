@@ -187,11 +187,13 @@ function Upgrade(cost, multi, upgid, id) {
 	this.multi = multi;
 	this.upgid = upgid;
 	this.id = id;
+	console.log(id);
 	this.upgrade = function() {
 		if (cookies >= cost) {
 			cookies -= cost;
 			cursormulti *= 2;
 			clickmulti *= 2;
+			console.log(id);
 			id.remove();
 		}
 	}
