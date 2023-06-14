@@ -15,7 +15,7 @@
 			<img id="name" src="cookie.png" alt="Click Me!" onclick="clicked()"/> <br><br>
 		</div>
 		<div class="shop">
-    			<button id="cursor_btn" class="shop" onclick="buy_building(cursorcost, cursors)"></button><br><br>
+    			<button id="cursor_btn" class="shop" onclick="buy_cursor()"></button><br><br>
 			<button id="grandma_btn" class="shop" onclick="buy_grandma()"></button><br><br>
 			<button id="farm_btn" class="shop" onclick="buy_farm()"></button><br><br>
 			<button id="mine_btn" class="shop" onclick="buy_mine()"></button><br><br>
@@ -27,8 +27,8 @@
 			<button id="lab_btn" class="shop" onclick="buy_lab()"></button><br><br>
 		</div>
 		<div class="shop">
-    			<button id="upg0" class="upg" onclick="upg0.upgrade();">My First Upgrade - 100 cookies</button><br><br>
-			<button id="upg1" class="upg" onclick="upg1.upgrade();">My Second Upgrade - 500 cookies</button><br><br>
+    			<button id="upg1" class="upg" onclick="upg(0)" data-info="100 cookies, doubles cursor output">My First Upgrade</button><br><br>
+			<button id="upg2" class="upg" onclick="upg(1)" data-info="500 cookies, doubles cursor output">My Second Upgrade</button><br><br>
 		</div>
 	</div>
 </body>
