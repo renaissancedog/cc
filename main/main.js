@@ -44,11 +44,6 @@ var wizardmulti = 1;
 var shipmentmulti = 1;
 var labmulti = 1;
 
-
-var numbers = [cookies, totalcookies, cps, cursors, grandmas, mines, farms, factories, banks, temples, wizards, shipments, labs,
-	cursormulti, grandmamulti, farmmulti, minemulti, factorymulti, bankmulti, templemulti, wizardmulti, shipmentmulti, labmulti,
-	cursorcost, grandmacost, farmcost, minecost, factorycost, bankcost, templecost, wizardcost, shipmentcost, labcost
-];
 //LOOPS
 setInterval(update, 100);
 
@@ -59,7 +54,7 @@ function update() {
 	q("cookie_counter").innerHTML = "Cookies: " + Math.round(cookies - 0.5);
 	q("cps_counter").innerHTML = "CPS: " + Math.round(cps * 10) / 10;
 	q("cursor_btn").innerHTML = "You have " + cursors + " cursors. Buy one for " + (Math.round(cursorcost + 0.49)) + " cookies.";
-	q("grandma_btn").innerHTML = "You have " + grandmas + " grandmas. Buy one for " + (Math.round(grandmacost + 0.49)) + " cookies.";
+	q("grandma-hidden-info").innerHTML = "You have " + grandmas + " grandmas. Buy one for " + (Math.round(grandmacost + 0.49)) + " cookies.";
 	q("farm_btn").innerHTML = "You have " + farms + " farms. Buy one for " + (Math.round(farmcost + 0.49)) + " cookies.";
 	q("mine_btn").innerHTML = "You have " + mines + " mines. Buy one for " + (Math.round(minecost + 0.49)) + " cookies.";
 	q("factory_btn").innerHTML = "You have " + factories + " factories. Buy one for " + (Math.round(factorycost + 0.49)) + " cookies.";
