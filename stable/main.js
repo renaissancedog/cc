@@ -4,7 +4,7 @@ function q(id) {
 }
 
 //VARIABLES
-var version = "0.5.22.2014";
+var version = "s.0.5.22.a";
 var cookies = 0;
 var totalcookies = 0;
 var cps = 0;
