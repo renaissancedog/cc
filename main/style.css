@@ -18,10 +18,23 @@
   width: 80px;
   box-sizing: border-box;
 }
-#infoBox {
-  position: absolute;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  padding: 10px;
-  display: none;
-}
+button.shop {
+      overflow: hidden;
+  }
+  button.shop:hover {
+      overflow: visible;
+  }
+  button.shop .hidden-info {
+      position: absolute;
+      top: 23px;
+      width: 220px;
+      text-align: left;
+      background: black;
+      padding: 10px;
+      opacity: 0;
+      transition: opacity .25s ease-in-out;
+    color:#fff;
+  }
+  button.shop:hover .hidden-info {
+      opacity: 1;
+  }
