@@ -22,9 +22,7 @@ button.shop:hover {
     overflow: visible;
 }
   button.shop .object-data {
-      position: absolute;
-      top: 23px;
-      width: 220px;
+      position: relative;
       text-align: left;
       background: black;
       padding: 10px;
