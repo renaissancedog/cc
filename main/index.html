@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/stable/style.css">
+	<script src="/stable/main.js"></script>
+	<a href="../index.html"> Play the Stable!</a>
+</head>
+<body>
+	<div class="container">
+		<div class="column">
+			<h1>Cookie Clicker</h1>
+			<h2 id="cookie_counter"> Cookies: 0 </h2>
+			<h2 id="cps_counter"> CPS: 0 </h2>
+			<img id="name" src="cookie.png" alt="Click Me!" onclick="clicked()"/> <br><br>
+		</div>
+		<div class="shop">
+    			<button id="cursor_btn" class="shop" onclick="buy_building(cursorcost, cursors)"></button><br><br>
+			<button id="grandma_btn" class="shop" onclick="buy_grandma()"></button><br><br>
+			<button id="farm_btn" class="shop" onclick="buy_farm()"></button><br><br>
+			<button id="mine_btn" class="shop" onclick="buy_mine()"></button><br><br>
+			<button id="factory_btn" class="shop" onclick="buy_factory()"></button><br><br>
+			<button id="bank_btn" class="shop" onclick="buy_bank()"></button><br><br>
+			<button id="temple_btn" class="shop" onclick="buy_temple()"></button><br><br>
+			<button id="wizard_btn" class="shop" onclick="buy_wizard()"></button><br><br>
+			<button id="shipment_btn" class="shop" onclick="buy_shipment()"></button><br><br>
+			<button id="lab_btn" class="shop" onclick="buy_lab()"></button><br><br>
+		</div>
+		<div class="shop">
+    			<button id="upg0" class="upg" onclick="upg0.upgrade();">My First Upgrade - 100 cookies</button><br><br>
+			<button id="upg1" class="upg" onclick="upg1.upgrade();">My Second Upgrade - 500 cookies</button><br><br>
+		</div>
+	</div>
+</body>
+<footer>
+  <p>&copy; 2023 Nobody. No rights reserved. This code is very useless and therefore free.</p>
+  <p id=version>Version 0.5.8.2107</p>
+</footer>
+</html>
