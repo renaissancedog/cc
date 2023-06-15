@@ -60,7 +60,7 @@ function update() {
 	q("factory-data").innerHTML = "You have " + factories + " factories. Buy one for " + (Math.round(factorycost + 0.49)) + " cookies.";
 	q("bank-data").innerHTML = "You have " + banks + " banks. Buy one for " + (Math.round(bankcost + 0.49)) + " cookies.";
 	q("temple-data").innerHTML = "You have " + temples + " temples. Buy one for " + (Math.round(templecost + 0.49)) + " cookies.";
-	q("wizard-data").innerHTML = "You have " + wizards + " wizards. Buy one for " + (Math.round(wizardcost + 0.49)) + " cookies.";
+	q("wizard-data").innerHTML = "You have " + wizards + " wizard towers. Buy one for " + (Math.round(wizardcost + 0.49)) + " cookies.";
 	q("shipment-data").innerHTML = "You have " + shipments + " shipments. Buy one for " + (Math.round(shipmentcost + 0.49)) + " cookies.";
 	q("lab-data").innerHTML = "You have " + labs + " alchemy labs. Buy one for " + (Math.round(labcost + 0.49)) + " cookies.";
 
