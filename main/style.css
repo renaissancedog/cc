@@ -18,21 +18,29 @@
   width: 80px;
   box-sizing: border-box;
 }
-button.shop {
-    overflow: visible;
-}
-button.shop:hover {
-    overflow: hidden;
-}
-  button.shop .object-data {
+
+button.shop .object-data {
       position: absolute;
       text-align: left;
       background: black;
       padding: 10px;
       opacity: 0;
       transition: opacity .25s ease-in-out;
-    color:#fff;
+      color:#fff;
   }
   button.shop:hover .object-data {
+      opacity: 1;
+  }
+
+  button.upg .object-data {
+      position: absolute;
+      text-align: left;
+      background: black;
+      padding: 10px;
+      opacity: 0;
+      transition: opacity .25s ease-in-out;
+      color:#fff;
+  }
+  button.upg:hover .object-data {
       opacity: 1;
   }
