@@ -53,7 +53,7 @@ function update() {
 
 	q("cookie_counter").innerHTML = "Cookies: " + Math.round(cookies - 0.5);
 	q("cps_counter").innerHTML = "CPS: " + Math.round(cps * 10) / 10;
-	q("cursor-data").innerHTML = "You have " + cursors + " cursors, producing "+cursors*0.1*cursormulti+" cps. Buy one for " + (Math.round(cursorcost + 0.49)) + " cookies.";
+	q("cursor-data").innerHTML = "You have " + cursors + " cursors, producing "+Math.round(cursors*cursormulti)/10+" cps. Buy one for " + (Math.round(cursorcost + 0.49)) + " cookies.";
 	q("grandma-data").innerHTML = "You have " + grandmas + " grandmas. Buy one for " + (Math.round(grandmacost + 0.49)) + " cookies.";
 	q("farm-data").innerHTML = "You have " + farms + " farms. Buy one for " + (Math.round(farmcost + 0.49)) + " cookies.";
 	q("mine-data").innerHTML = "You have " + mines + " mines. Buy one for " + (Math.round(minecost + 0.49)) + " cookies.";
