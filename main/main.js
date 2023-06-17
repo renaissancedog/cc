@@ -1,4 +1,4 @@
-var version = "b.6.16.b";
+var version = "b.6.17.a";
 
 //COOL FUNCTIONS
 function q(id) {
@@ -67,7 +67,7 @@ function update() {
 	
 	q("cookie_counter").innerHTML = "Cookies: " + Math.round(cookies - 0.5);
 	q("cps_counter").innerHTML = "CPS: " + Math.round(cps * 10) / 10;
-	q("total_cookies").innerHTML = "Total Cookies produced ever: " + Math.round(totalcookies);
+	q("total_cookies").innerHTML = "Total Cookies produced ever: " + Math.round(totalcookies-0.5);
 	q("version").innerHTML = "Version " + version;
 }
 
