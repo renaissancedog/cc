@@ -31,7 +31,11 @@ button.shop .object-data {
   button.shop:hover .object-data {
       opacity: 1;
   }
-
+  button.upg {
+      position: absolute;
+      width: 100px;
+      height: 30px;
+  }
   button.upg .object-data {
       position: absolute;
       text-align: left;
