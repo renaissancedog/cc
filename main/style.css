@@ -33,8 +33,8 @@ button.shop .object-data {
   }
   button.shop {
       position: absolute;
-      width: 100px;
-      height: 30px;
+      width: 200px;
+      height: 60px;
   }
   button.upg .object-data {
       position: absolute;
