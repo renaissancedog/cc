@@ -29,7 +29,7 @@ button.shop .object-data {
         opacity: 0;
         transition: opacity .25s ease-in-out;
         color: #fff;
-        width: 80px;
+        width: 100px;
 }
 
 button.shop:hover .object-data {
