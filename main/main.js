@@ -223,3 +223,6 @@ function checkCookie() {
      }
   }
 }
+window.onbeforeunload = function(){
+   alert("test");
+}
