@@ -1,39 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="stable/style.css">
-	<script src="stable/main.js"></script>
-	<a href="main/index.html"> Play the Beta!</a>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+	<link rel="stylesheet" href="stable/style.css"> 
+	<script src="stable/main.js"></script> 
+	<a href="main/index.html"> Play the Beta!</a><br>
+        <a href="https://orteil.dashnet.org/cookieclicker/"> Play real Cookie Clicker here!</a><br>
+	<a href="https://github.com/renaissancedog/cc"> Commit on Github here!</a>
 </head>
+
 <body>
-	<div class="container">
-		<div class="column">
-			<h1>Cookie Clicker</h1>
-			<h2 id="cookie_counter"> Cookies: 0 </h2>
-			<h2 id="cps_counter"> CPS: 0 </h2>
-			<img id="name" src="cookie.png" alt="Click Me!" onclick="clicked()"/> <br><br>
-		</div>
-		<div class="shop">
-    			<button id="cursor_btn" class="shop" onclick="buy_cursor()"></button><br><br>
-			<button id="grandma_btn" class="shop" onclick="buy_grandma()"></button><br><br>
-			<button id="farm_btn" class="shop" onclick="buy_farm()"></button><br><br>
-			<button id="mine_btn" class="shop" onclick="buy_mine()"></button><br><br>
-			<button id="factory_btn" class="shop" onclick="buy_factory()"></button><br><br>
-			<button id="bank_btn" class="shop" onclick="buy_bank()"></button><br><br>
-			<button id="temple_btn" class="shop" onclick="buy_temple()"></button><br><br>
-			<button id="wizard_btn" class="shop" onclick="buy_wizard()"></button><br><br>
-			<button id="shipment_btn" class="shop" onclick="buy_shipment()"></button><br><br>
-			<button id="lab_btn" class="shop" onclick="buy_lab()"></button><br><br>
-		</div>
-		<div class="shop">
-    			<button id="upg0" class="upg" onclick="upg0.upgrade();">My First Upgrade - 100 cookies</button><br><br>
-			<button id="upg1" class="upg" onclick="upg1.upgrade();">My Second Upgrade - 500 cookies</button><br><br>
-		</div>
-	</div>
+        <div class="container">
+                <div class="column">
+                        <h1>Cookie Clicker</h1>
+                        <h2 id="cookie_counter"> Cookies: 0 </h2>
+                        <h2 id="cps_counter"> CPS: 0 </h2>
+                        <h3 id="total_cookies"> Total Cookies produced ever: 0 </h3>
+                        <img id="name" src="../cookie.png" alt="Click Me!" onclick="clicked()" /> <br><br>
+                </div>
+                <div class="shop">
+                        <button id="cursor_btn" class="shop" onclick="buy_cursor();">Cursor<span id="cursor-data" class="object-data"></span></button><br><br>
+                        <button id="grandma_btn" class="shop" onclick="buy_grandma();">Grandma<span id="grandma-data" class="object-data"></span></button><br><br>
+                        <button id="farm_btn" class="shop" onclick="buy_farm()">Farm<span id="farm-data" class="object-data"></span></button><br><br>
+                        <button id="mine_btn" class="shop" onclick="buy_mine()">Mine<span id="mine-data" class="object-data"></span></button><br><br>
+                        <button id="factory_btn" class="shop" onclick="buy_factory()">Factory<span id="factory-data" class="object-data"></span></button><br><br>
+                        <button id="bank_btn" class="shop" onclick="buy_bank()">Bank<span id="bank-data" class="object-data"></span></button><br><br>
+                        <button id="temple_btn" class="shop" onclick="buy_temple()">Temple<span id="temple-data" class="object-data"></span></button><br><br>
+                        <button id="wizard_btn" class="shop" onclick="buy_wizard()">Wizard Tower<span id="wizard-data" class="object-data"></span></button><br><br>
+                        <button id="shipment_btn" class="shop" onclick="buy_shipment()">Shipment<span id="shipment-data" class="object-data"></span></button><br><br>
+                        <button id="lab_btn" class="shop" onclick="buy_lab()">Alchemy Lab<span id="lab-data" class="object-data"></span></button>
+                </div>
+                <div class="shop">
+                        <button id="upg0" class="upg" onclick="upg0.upgrade();">My First Upgrade<span id="upg0-data" class="object-data">Doubles cursor and click output for 100 cookies</span></button><br><br>
+                        <button id="upg1" class="upg" onclick="upg1.upgrade();">My Second Upgrade<span id="upg1-data" class="object-data">Doubles cursor and click output for 500 cookies</span></button><br><br>
+                </div>
+        </div>
 </body>
 <footer>
-  <p>&copy; 2023 Nobody. No rights reserved. This code is very useless and therefore free.</p>
-  <p id=version></p>
+        <p>&copy; 2023 Nobody. No rights reserved. This code is very useless and therefore free. For more information about the programmer, see <a href="https://renaissancedog.github.io/mywebsite/">his website.</a></p>
+        <p id=version></p>
+        <p id=htmlversion>HTML version 6.16.c</p>
 </footer>
+
 </html>
