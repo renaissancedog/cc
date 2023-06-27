@@ -5,6 +5,18 @@ function q(id) {
         return document.getElementById(id);
 }
 
+function addcomma(what) {
+	var str='';
+	what=Math.floor(what);
+	what=(what+'').split('').reverse();
+	for (var i in what)
+	{
+		if (i%3==0 && i>0) str=','+str;
+		str=what[i]+str;
+	}
+	return str;
+}
+
 //VARIABLES
 var cookies = 0;
 var totalcookies = 0;
