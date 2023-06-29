@@ -58,6 +58,7 @@ var labmulti = 1;
 
 //LOOPS
 setInterval(update, 100);
+setInterval(cookies, 6000);
 
 function update() {
         cps = cursors * 0.1 * cursormulti + grandmas * grandmamulti + farms * 8 * farmmulti + mines * 47 * minemulti + factories * 260 * factorymulti + banks *
@@ -82,6 +83,9 @@ function update() {
         q("total_cookies").innerHTML = "Total Cookies produced ever: " + Math.round(totalcookies - 0.5);
         q("version").innerHTML = "Version " + version;
 }
+function cookies() {
+	checkCookies();
+}	
 
 //ONCLICKS
 function clicked() {
