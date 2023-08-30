@@ -1,21 +1,10 @@
-var version = "b.6.29.a";
+var version = "b.8.30.a";
 
 //COOL FUNCTIONS
 function q(id) {
         return document.getElementById(id);
 }
 
-function addcomma(what) {
-	var str='';
-	what=Math.floor(what);
-	what=(what+'').split('').reverse();
-	for (var i in what)
-	{
-		if (i%3==0 && i>0) str=','+str;
-		str=what[i]+str;
-	}
-	return str;
-}
 
 //VARIABLES
 var cookies = 0;
@@ -86,7 +75,10 @@ function update() {
 function cookies() {
 	checkCookies();
 }	
-
+function exportSave() {
+  	var exportCode = "f"
+	navigator.clipboard.writeText(exportCode);
+}
 //ONCLICKS
 function clicked() {
         cookies += clickmulti;
@@ -203,42 +195,3 @@ function Upgrade(cost, multi, upgid, id) {
 }
 var upg0 = new Upgrade(100, 2, 0, "upg0");
 var upg1 = new Upgrade(500, 2, 1, "upg1");
-
-//COOKIES
-function setCookie(cname,cvalue,exdays) {
-  const d = new Date();
-  d.setTime(d.getTime() + (exdays*24*60*60*1000));
-  let expires = "expires=" + d.toUTCString();
-  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-}
-
-function getCookie(cname) {
-  let name = cname + "=";
-  let decodedCookie = decodeURIComponent(document.cookie);
-  let ca = decodedCookie.split(';');
-  for(let i = 0; i < ca.length; i++) {
-    let c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return "";
-}
-
-function checkCookie() {
-  let cookies = getCookie("cookies");
-  if (cookies != "") {
-    alert("You have " + cookies);
-  } else {
-     cookies = prompt("Please enter amount of cookies:","");
-     if (cookies != "" && cookies != null) {
-       setCookie("cookies", cookies, 30);
-     }
-  }
-}
-window.onbeforeunload = function(){
-   alert("test");
-}
