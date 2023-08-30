@@ -1,4 +1,4 @@
-var version = "b.8.30.b";
+var version = "b.8.30.c";
 
 //COOL FUNCTIONS
 function q(id) {
@@ -76,7 +76,8 @@ function cookies() {
 	checkCookies();
 }	
 function exportSave() {
-  	var exportCode = "f"
+  	var exportCode = (cookies+"/"+totalcookies+"/"+clickmulti+"/"+cps+"/"+cursors+"/"+grandmas+"/"+farms+"/"+mines+"/"+factories+"/"
+			  +banks+"/"+temples+"/"+wizards+"/"+shipments+"/"+labs+"/"+(cursors*3+grandmas*17+factories*5"+banks*55+farms*6+labs*8));
 	navigator.clipboard.writeText(exportCode);
 }
 //ONCLICKS
