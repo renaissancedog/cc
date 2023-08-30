@@ -1,4 +1,4 @@
-var version = "b.8.30.c";
+var version = "b.8.30.d";
 
 //COOL FUNCTIONS
 function q(id) {
@@ -47,7 +47,6 @@ var labmulti = 1;
 
 //LOOPS
 setInterval(update, 100);
-setInterval(cookies, 6000);
 
 function update() {
         cps = cursors * 0.1 * cursormulti + grandmas * grandmamulti + farms * 8 * farmmulti + mines * 47 * minemulti + factories * 260 * factorymulti + banks *
@@ -71,13 +70,10 @@ function update() {
         q("cps_counter").innerHTML = "CPS: " + Math.round(cps * 10) / 10;
         q("total_cookies").innerHTML = "Total Cookies produced ever: " + Math.round(totalcookies - 0.5);
         q("version").innerHTML = "Version " + version;
-}
-function cookies() {
-	checkCookies();
 }	
 function exportSave() {
   	var exportCode = (cookies+"/"+totalcookies+"/"+clickmulti+"/"+cps+"/"+cursors+"/"+grandmas+"/"+farms+"/"+mines+"/"+factories+"/"
-			  +banks+"/"+temples+"/"+wizards+"/"+shipments+"/"+labs+"/"+(cursors*3+grandmas*17+factories*5"+banks*55+farms*6+labs*8));
+			  +banks+"/"+temples+"/"+wizards+"/"+shipments+"/"+labs+"/"+(cursors*3+grandmas*17+factories*5+banks*55+farms*6+labs*8));
 	navigator.clipboard.writeText(exportCode);
 }
 //ONCLICKS
