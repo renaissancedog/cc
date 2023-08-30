@@ -1,4 +1,4 @@
-var version = "b.8.30.a";
+var version = "b.8.30.b";
 
 //COOL FUNCTIONS
 function q(id) {
@@ -62,7 +62,7 @@ function update() {
         q("temple-data").innerHTML = "You have " + temples + " temples, producing " + Math.round(temples * 7800 * templemulti * 10) / 10 + " cps. Buy one for " + (Math.round(templecost + 0.49)) + " cookies.";
         q("wizard-data").innerHTML = "You have " + wizards + " wizard towers, producing " + Math.round(wizards * 44000 * wizardmulti * 10) / 10 + " cps. Buy one for " + (Math.round(wizardcost + 0.49)) + " cookies.";
         q("shipment-data").innerHTML = "You have " + shipments + " shipments, producing " + Math.round(shipments * 260000 * shipmentmulti * 10) / 10 + " cps. Buy one for " + (Math.round(shipmentcost + 0.49)) + " cookies.";
-        q("lab-data").innerHTML = "You have " + labs + " alchemy labs, producing " + addcomma(Math.round(labs * 1600000 * labmulti * 10) / 10) + " cps. Buy one for " + (Math.round(labcost + 0.49)) + " cookies.";
+        q("lab-data").innerHTML = "You have " + labs + " alchemy labs, producing " + (Math.round(labs * 1600000 * labmulti * 10) / 10) + " cps. Buy one for " + (Math.round(labcost + 0.49)) + " cookies.";
 
         cookies += cps / 10;
         totalcookies += cps / 10;
