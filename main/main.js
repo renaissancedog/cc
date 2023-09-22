@@ -76,6 +76,9 @@ function exportSave() {
 			  +banks+"/"+temples+"/"+wizards+"/"+shipments+"/"+labs+"/"+(cursors*3+grandmas*17+factories*5+banks*55+farms*6+labs*8));
 	navigator.clipboard.writeText(exportCode);
 }
+function importSave() {
+  	var importCode = prompt("Enter save code(not working for now)");
+}
 //ONCLICKS
 function clicked() {
         cookies += clickmulti;
