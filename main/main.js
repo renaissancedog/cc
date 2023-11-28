@@ -77,7 +77,13 @@ function exportSave() {
 	navigator.clipboard.writeText(exportCode);
 }
 function importSave() {
-  	var importCode = prompt("Enter save code(not working for now)");
+  	var importCode = prompt("Enter save code: ");
+	const importArray=importCode.split("/");
+	cookies=importArray[0];
+	totalcookies=importArray[1];
+	clickmulti=importArray[2];
+	cps=importArray[3];
+	cursors=importArray[4];
 }
 //ONCLICKS
 function clicked() {
