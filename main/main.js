@@ -1,14 +1,14 @@
-var version = "b.12.8.a";
+var version = "b.12.8.b";
 
 function q(id) {
     return document.getElementById(id);
 }
 class Building {
-    constructor(name, baseCps, baseCost, costMultiplier) {
+    constructor(name, baseCps, baseCost) {
         this.name = name;
         this.baseCps = baseCps;
         this.baseCost = baseCost;
-        this.costMultiplier = costMultiplier;
+        this.costMultiplier = 1.15;
         this.count = 0;
         this.currentCost = baseCost;
     }
@@ -18,7 +18,7 @@ class Building {
             cookies -= this.currentCost;
             this.count++;
             this.currentCost = Math.round(this.baseCost * Math.pow(this.costMultiplier, this.count));
-            update();
+            game.update();
         }
     }
 
@@ -34,8 +34,9 @@ class Building {
         return `You have ${this.count} ${this.name}s, producing ${Math.round(this.getCps() * 10) / 10} cps. Buy one for ${Math.round(this.getCost() + 0.49)} cookies.`;
     }
 }
-const cursor = new Building("cursor", 0.1, 15, 1.15);
-const grandma = new Building("grandma", 1, 100, 1.15);
+const cursor = new Building("cursor", 0.1, 15);
+const grandma = new Building("grandma", 1, 100);
+const farm = new Building("farm", 8, 1100);
 cursor.buy();
 
 class CookieClicker {
@@ -78,21 +79,23 @@ class CookieClicker {
         var shipmentmulti = 1;
         var labmulti = 1;
     }
-
+    add(add) {
+        this.cookies+=add;
+    }
     update() {
         cps = cursors * 0.1 * cursormulti + grandmas * grandmamulti + farms * 8 * farmmulti + mines * 47 * minemulti + factories * 260 * factorymulti + banks *
             1400 * bankmulti + temples * 7800 * templemulti + wizards * 44000 * wizardmulti + shipments * 260000 * shipmentmulti + labs * 1600000 * labmulti;
 
-        q("cursor-data").innerHTML = "You have " + cursors + " cursors, producing " + Math.round(cursors * 0.1 * cursormulti * 10) / 10 + " cps. Buy one for " + (Math.round(cursorcost + 0.49)) + " cookies.";
-        q("grandma-data").innerHTML = "You have " + grandmas + " grandmas, producing " + Math.round(grandmas * 1 * grandmamulti * 10) / 10 + " cps. Buy one for " + (Math.round(grandmacost + 0.49)) + " cookies.";
-        q("farm-data").innerHTML = "You have " + farms + " farms, producing " + Math.round(farms * 8 * farmmulti * 10) / 10 + " cps. Buy one for " + (Math.round(farmcost + 0.49)) + " cookies.";
-        q("mine-data").innerHTML = "You have " + mines + " mines, producing " + Math.round(mines * 47 * minemulti * 10) / 10 + " cps. Buy one for " + (Math.round(minecost + 0.49)) + " cookies.";
-        q("factory-data").innerHTML = "You have " + factories + " factories, producing " + Math.round(factories * 260 * factorymulti * 10) / 10 + " cps. Buy one for " + (Math.round(factorycost + 0.49)) + " cookies.";
-        q("bank-data").innerHTML = "You have " + banks + " banks, producing " + Math.round(banks * 1400 * bankmulti * 10) / 10 + " cps. Buy one for " + (Math.round(bankcost + 0.49)) + " cookies.";
-        q("temple-data").innerHTML = "You have " + temples + " temples, producing " + Math.round(temples * 7800 * templemulti * 10) / 10 + " cps. Buy one for " + (Math.round(templecost + 0.49)) + " cookies.";
-        q("wizard-data").innerHTML = "You have " + wizards + " wizard towers, producing " + Math.round(wizards * 44000 * wizardmulti * 10) / 10 + " cps. Buy one for " + (Math.round(wizardcost + 0.49)) + " cookies.";
-        q("shipment-data").innerHTML = "You have " + shipments + " shipments, producing " + Math.round(shipments * 260000 * shipmentmulti * 10) / 10 + " cps. Buy one for " + (Math.round(shipmentcost + 0.49)) + " cookies.";
-        q("lab-data").innerHTML = "You have " + labs + " alchemy labs, producing " + (Math.round(labs * 1600000 * labmulti * 10) / 10) + " cps. Buy one for " + (Math.round(labcost + 0.49)) + " cookies.";
+        q("cursor-data").innerHTML = "You have " + game.cursors + " cursors, producing " + Math.round(cursors * 0.1 * cursormulti * 10) / 10 + " cps. Buy one for " + (Math.round(cursorcost + 0.49)) + " cookies.";
+        q("grandma-data").innerHTML = "You have " + game.grandmas + " grandmas, producing " + Math.round(grandmas * 1 * grandmamulti * 10) / 10 + " cps. Buy one for " + (Math.round(grandmacost + 0.49)) + " cookies.";
+        q("farm-data").innerHTML = "You have " + game.farms + " farms, producing " + Math.round(farms * 8 * farmmulti * 10) / 10 + " cps. Buy one for " + (Math.round(farmcost + 0.49)) + " cookies.";
+        q("mine-data").innerHTML = "You have " + game.mines + " mines, producing " + Math.round(mines * 47 * minemulti * 10) / 10 + " cps. Buy one for " + (Math.round(minecost + 0.49)) + " cookies.";
+        q("factory-data").innerHTML = "You have " + game.factories + " factories, producing " + Math.round(factories * 260 * factorymulti * 10) / 10 + " cps. Buy one for " + (Math.round(factorycost + 0.49)) + " cookies.";
+        q("bank-data").innerHTML = "You have " + game.banks + " banks, producing " + Math.round(banks * 1400 * bankmulti * 10) / 10 + " cps. Buy one for " + (Math.round(bankcost + 0.49)) + " cookies.";
+        q("temple-data").innerHTML = "You have " + game.temples + " temples, producing " + Math.round(temples * 7800 * templemulti * 10) / 10 + " cps. Buy one for " + (Math.round(templecost + 0.49)) + " cookies.";
+        q("wizard-data").innerHTML = "You have " + game.wizards + " wizard towers, producing " + Math.round(wizards * 44000 * wizardmulti * 10) / 10 + " cps. Buy one for " + (Math.round(wizardcost + 0.49)) + " cookies.";
+        q("shipment-data").innerHTML = "You have " + game.shipments + " shipments, producing " + Math.round(shipments * 260000 * shipmentmulti * 10) / 10 + " cps. Buy one for " + (Math.round(shipmentcost + 0.49)) + " cookies.";
+        q("lab-data").innerHTML = "You have " + game.labs + " alchemy labs, producing " + (Math.round(labs * 1600000 * labmulti * 10) / 10) + " cps. Buy one for " + (Math.round(labcost + 0.49)) + " cookies.";
 
         cookies += cps / 10;
         totalcookies += cps / 10;
@@ -117,7 +120,7 @@ class CookieClicker {
         cursors = importArray[4];
     }
 }
-const game = new CookieClicker();
+const Game = new CookieClicker();
 
 function buy_cursor() {
     if (cookies >= cursorcost) {
