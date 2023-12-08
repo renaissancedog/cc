@@ -4,10 +4,9 @@ var version = "b.11.28.a";
 function q(id) {
         return document.getElementById(id);
 }
-
-
-//VARIABLES
-var cookies = 0;
+class CookieClicker {
+    constructor() {
+        var cookies = 0;
 var totalcookies = 0;
 var cps = 0;
 var clickmulti = 1;
@@ -44,11 +43,9 @@ var templemulti = 1;
 var wizardmulti = 1;
 var shipmentmulti = 1;
 var labmulti = 1;
+    }
 
-//LOOPS
-setInterval(update, 100);
-
-function update() {
+    update() {
         cps = cursors * 0.1 * cursormulti + grandmas * grandmamulti + farms * 8 * farmmulti + mines * 47 * minemulti + factories * 260 * factorymulti + banks *
                 1400 * bankmulti + temples * 7800 * templemulti + wizards * 44000 * wizardmulti + shipments * 260000 * shipmentmulti + labs * 1600000 * labmulti;
 
@@ -70,29 +67,23 @@ function update() {
         q("cps_counter").innerHTML = "CPS: " + Math.round(cps * 10) / 10;
         q("total_cookies").innerHTML = "Total Cookies produced ever: " + Math.round(totalcookies - 0.5);
         q("version").innerHTML = "Version " + version;
-}	
-function exportSave() {
-  	var exportCode = (cookies+"/"+totalcookies+"/"+clickmulti+"/"+cps+"/"+cursors+"/"+grandmas+"/"+farms+"/"+mines+"/"+factories+"/"
+    }
+    static exportSave() {
+        var exportCode = (cookies+"/"+totalcookies+"/"+clickmulti+"/"+cps+"/"+cursors+"/"+grandmas+"/"+farms+"/"+mines+"/"+factories+"/"
 			  +banks+"/"+temples+"/"+wizards+"/"+shipments+"/"+labs+"/"+(cursors*3+grandmas*17+factories*5+banks*55+farms*6+labs*8));
 	navigator.clipboard.writeText(exportCode);
-}
-function importSave() {
-  	var importCode = prompt("Enter save code: ");
+    }
+    static importSave() {
+	var importCode = prompt("Enter save code: ");
 	const importArray=importCode.split("/");
 	cookies=importArray[0];
 	totalcookies=importArray[1];
 	clickmulti=importArray[2];
 	cps=importArray[3];
 	cursors=importArray[4];
+    }
 }
-//ONCLICKS
-function clicked() {
-        cookies += clickmulti;
-        totalcookies += clickmulti;
-        update();
-}
-//BUILDING BUYING
-
+const game = new CookieClicker();
 function buy_cursor() {
         if (cookies >= cursorcost) {
                 cookies -= cursorcost;
@@ -201,3 +192,16 @@ function Upgrade(cost, multi, upgid, id) {
 }
 var upg0 = new Upgrade(100, 2, 0, "upg0");
 var upg1 = new Upgrade(500, 2, 1, "upg1");
+
+function clicked() {
+        cookies += clickmulti;
+        totalcookies += clickmulti;
+        update();
+}
+
+setInterval(() => {
+    game.update();
+}, 100);
+
+
+
