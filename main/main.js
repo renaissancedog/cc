@@ -1,4 +1,4 @@
-var version = "b.12.8.g";
+var version = "b.12.8.h";
 function q(id) {
     return document.getElementById(id);
 }
@@ -51,8 +51,8 @@ class CookieClicker {
     }
     update() {
         
-        this.cps = cursors.getCps + grandmas.getCps + farms.getCps + mines.getCps + factories.getCPS + banks.getCPS 
-            + temples.getCps + wizards.getCps + shipments.getCps + labs.getCps;
+        this.cps = cursors.getCps() + grandmas.getCps() + farms.getCps() + mines.getCps() + factories.getCps() + banks.getCps() 
+            + temples.getCps() + wizards.getCps() + shipments.getCps() + labs.getCps();
 
         q("cursor-data").innerHTML = "You have " + cursors.count + " cursors, producing " + Math.round(cursors.getCps()*10) / 10 + " cps. Buy one for " + (Math.round(cursors.cost + 0.49)) + " cookies.";
         q("grandma-data").innerHTML = "You have " + grandmas.count + " grandmas, producing " + Math.round(grandmas.getCps()* 10) / 10 + " cps. Buy one for " + (Math.round(grandmas.cost + 0.49)) + " cookies.";
