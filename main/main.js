@@ -1,4 +1,4 @@
-var version = "b.12.8.f";
+var version = "b.12.8.g";
 function q(id) {
     return document.getElementById(id);
 }
@@ -23,14 +23,6 @@ class Building {
     getCps() {
         return this.count * this.baseCps * this.multiplier;
     }
-
-    getCost() {
-        return this.currentCost;
-    }
-
-    getInfo() {
-        return `You have ${this.count} ${this.name}s, producing ${Math.round(this.getCps() * 10) / 10} cps. Buy one for ${Math.round(this.getCost() + 0.49)} cookies.`;
-    }
 }
 const cursors = new Building(0.1, 15);
 const grandmas = new Building(1, 100);
@@ -42,7 +34,6 @@ const temples = new Building(7800, 20000000);
 const wizards = new Building(44000, 330000000);
 const shipments = new Building(260000, 5100000000);
 const labs = new Building(1600000, 75000000000);
-
 
 class CookieClicker {
     constructor() {
@@ -63,16 +54,16 @@ class CookieClicker {
         this.cps = cursors.getCps + grandmas.getCps + farms.getCps + mines.getCps + factories.getCPS + banks.getCPS 
             + temples.getCps + wizards.getCps + shipments.getCps + labs.getCps;
 
-        q("cursor-data").innerHTML = "You have " + cursors.count + " cursors, producing " + Math.round(cursors.getCps*10) / 10 + " cps. Buy one for " + (Math.round(cursors.cost + 0.49)) + " cookies.";
-        q("grandma-data").innerHTML = "You have " + grandmas.count + " grandmas, producing " + Math.round(grandmas.getCps* 10) / 10 + " cps. Buy one for " + (Math.round(grandmas.cost + 0.49)) + " cookies.";
-        q("farm-data").innerHTML = "You have " + farms.count + " farms, producing " + Math.round(farms.getCps * 10) / 10 + " cps. Buy one for " + (Math.round(farms.cost + 0.49)) + " cookies.";
-        q("mine-data").innerHTML = "You have " + mines.count + " mines, producing " + Math.round(mines.getCps * 10) / 10 + " cps. Buy one for " + (Math.round(mines.cost + 0.49)) + " cookies.";
-        q("factory-data").innerHTML = "You have " + factories.count + " factories, producing " + Math.round(factories.getCps * 10) / 10 + " cps. Buy one for " + (Math.round(factories.cost + 0.49)) + " cookies.";
-        q("bank-data").innerHTML = "You have " + banks.count + " banks, producing " + Math.round(banks.getCps * 10) / 10 + " cps. Buy one for " + (Math.round(banks.cost + 0.49)) + " cookies.";
-        q("temple-data").innerHTML = "You have " + temples.count + " temples, producing " + Math.round(temples.getCps * 10) / 10 + " cps. Buy one for " + (Math.round(temples.cost + 0.49)) + " cookies.";
-        q("wizard-data").innerHTML = "You have " + wizards.count + " wizard towers, producing " + Math.round(wizards.getCps * 10) / 10 + " cps. Buy one for " + (Math.round(wizards.cost + 0.49)) + " cookies.";
-        q("shipment-data").innerHTML = "You have " + shipments.count + " shipments, producing " + Math.round(shipments.getCps * 10) / 10 + " cps. Buy one for " + (Math.round(shipments.cost + 0.49)) + " cookies.";
-        q("lab-data").innerHTML = "You have " + labs.count + " alchemy labs, producing " + (Math.round(labs.getCps * 10) / 10) + " cps. Buy one for " + (Math.round(labs.cost + 0.49)) + " cookies.";
+        q("cursor-data").innerHTML = "You have " + cursors.count + " cursors, producing " + Math.round(cursors.getCps()*10) / 10 + " cps. Buy one for " + (Math.round(cursors.cost + 0.49)) + " cookies.";
+        q("grandma-data").innerHTML = "You have " + grandmas.count + " grandmas, producing " + Math.round(grandmas.getCps()* 10) / 10 + " cps. Buy one for " + (Math.round(grandmas.cost + 0.49)) + " cookies.";
+        q("farm-data").innerHTML = "You have " + farms.count + " farms, producing " + Math.round(farms.getCps() * 10) / 10 + " cps. Buy one for " + (Math.round(farms.cost + 0.49)) + " cookies.";
+        q("mine-data").innerHTML = "You have " + mines.count + " mines, producing " + Math.round(mines.getCps() * 10) / 10 + " cps. Buy one for " + (Math.round(mines.cost + 0.49)) + " cookies.";
+        q("factory-data").innerHTML = "You have " + factories.count + " factories, producing " + Math.round(factories.getCps() * 10) / 10 + " cps. Buy one for " + (Math.round(factories.cost + 0.49)) + " cookies.";
+        q("bank-data").innerHTML = "You have " + banks.count + " banks, producing " + Math.round(banks.getCps() * 10) / 10 + " cps. Buy one for " + (Math.round(banks.cost + 0.49)) + " cookies.";
+        q("temple-data").innerHTML = "You have " + temples.count + " temples, producing " + Math.round(temples.getCps() * 10) / 10 + " cps. Buy one for " + (Math.round(temples.cost + 0.49)) + " cookies.";
+        q("wizard-data").innerHTML = "You have " + wizards.count + " wizard towers, producing " + Math.round(wizards.getCps() * 10) / 10 + " cps. Buy one for " + (Math.round(wizards.cost + 0.49)) + " cookies.";
+        q("shipment-data").innerHTML = "You have " + shipments.count + " shipments, producing " + Math.round(shipments.getCps() * 10) / 10 + " cps. Buy one for " + (Math.round(shipments.cost + 0.49)) + " cookies.";
+        q("lab-data").innerHTML = "You have " + labs.count + " alchemy labs, producing " + (Math.round(labs.getCps() * 10) / 10) + " cps. Buy one for " + (Math.round(labs.cost + 0.49)) + " cookies.";
 
         this.cookies += this.cps / 10;
         this.totalcookies += this.cps / 10;
@@ -99,7 +90,6 @@ class CookieClicker {
     
 }
 const game = new CookieClicker();
-cursors.buy(game.cookies);
 setInterval(() => {
     game.update();
 }, 100);
