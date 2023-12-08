@@ -1,4 +1,4 @@
-var version = "b.12.8.c";
+var version = "b.12.8.d";
 function q(id) {
     return document.getElementById(id);
 }
@@ -44,7 +44,7 @@ const temples = new Building("temple", 8, 1100);
 const wizards = new Building("wizard", 8, 1100);
 const shipments = new Building("shipment", 8, 1100);
 const labs = new Building("lab", 8, 1100);
-cursor.buy();
+cursors.buy();
 
 class CookieClicker {
     constructor() {
@@ -79,13 +79,13 @@ class CookieClicker {
         this.cookies+=add;
     }
     update() {
-        cursors=cursor.count;
+        cursors=cursors.count;
         
         cps = cursors * 0.1 * cursormulti + grandmas * grandmamulti + farms * 8 * farmmulti + mines * 47 * minemulti + factories * 260 * factorymulti + banks *
             1400 * bankmulti + temples * 7800 * templemulti + wizards * 44000 * wizardmulti + shipments * 260000 * shipmentmulti + labs * 1600000 * labmulti;
 
-        q("cursor-data").innerHTML = "You have " + this.cursors + " cursors, producing " + Math.round(cursors * 0.1 * cursormulti * 10) / 10 + " cps. Buy one for " + (Math.round(cursor.currentCost + 0.49)) + " cookies.";
-        q("grandma-data").innerHTML = "You have " + this.grandmas + " grandmas, producing " + Math.round(grandmas * 1 * grandmamulti * 10) / 10 + " cps. Buy one for " + (Math.round(grandma.currentCost + 0.49)) + " cookies.";
+        q("cursor-data").innerHTML = "You have " + this.cursors + " cursors, producing " + Math.round(cursors * 0.1 * cursormulti * 10) / 10 + " cps. Buy one for " + (Math.round(cursors.currentCost + 0.49)) + " cookies.";
+        q("grandma-data").innerHTML = "You have " + this.grandmas + " grandmas, producing " + Math.round(grandmas * 1 * grandmamulti * 10) / 10 + " cps. Buy one for " + (Math.round(grandmas.currentCost + 0.49)) + " cookies.";
         q("farm-data").innerHTML = "You have " + this.farms + " farms, producing " + Math.round(farms * 8 * farmmulti * 10) / 10 + " cps. Buy one for " + (Math.round(farmcost + 0.49)) + " cookies.";
         q("mine-data").innerHTML = "You have " + this.mines + " mines, producing " + Math.round(mines * 47 * minemulti * 10) / 10 + " cps. Buy one for " + (Math.round(minecost + 0.49)) + " cookies.";
         q("factory-data").innerHTML = "You have " + this.factories + " factories, producing " + Math.round(factories * 260 * factorymulti * 10) / 10 + " cps. Buy one for " + (Math.round(factorycost + 0.49)) + " cookies.";
