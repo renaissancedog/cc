@@ -1,53 +1,53 @@
 var version = "b.11.28.a";
 
-//COOL FUNCTIONS
 function q(id) {
-        return document.getElementById(id);
+    return document.getElementById(id);
 }
+
 class CookieClicker {
     constructor() {
         var cookies = 0;
-var totalcookies = 0;
-var cps = 0;
-var clickmulti = 1;
+        var totalcookies = 0;
+        var cps = 0;
+        var clickmulti = 1;
 
-var cursors = 0;
-var grandmas = 0;
-var farms = 0;
-var mines = 0;
-var factories = 0;
-var banks = 0;
-var temples = 0;
-var wizards = 0;
-var shipments = 0;
-var labs = 0;
+        var cursors = 0;
+        var grandmas = 0;
+        var farms = 0;
+        var mines = 0;
+        var factories = 0;
+        var banks = 0;
+        var temples = 0;
+        var wizards = 0;
+        var shipments = 0;
+        var labs = 0;
 
-var cursorcost = 15;
-var grandmacost = 100;
-var farmcost = 1100;
-var minecost = 12000;
-var factorycost = 130000;
-var bankcost = 1400000;
-var templecost = 20000000;
-var wizardcost = 330000000;
-var shipmentcost = 5100000000;
-var labcost = 75000000000;
+        var cursorcost = 15;
+        var grandmacost = 100;
+        var farmcost = 1100;
+        var minecost = 12000;
+        var factorycost = 130000;
+        var bankcost = 1400000;
+        var templecost = 20000000;
+        var wizardcost = 330000000;
+        var shipmentcost = 5100000000;
+        var labcost = 75000000000;
 
-var cursormulti = 1;
-var grandmamulti = 1;
-var farmmulti = 1;
-var minemulti = 1;
-var factorymulti = 1;
-var bankmulti = 1;
-var templemulti = 1;
-var wizardmulti = 1;
-var shipmentmulti = 1;
-var labmulti = 1;
+        var cursormulti = 1;
+        var grandmamulti = 1;
+        var farmmulti = 1;
+        var minemulti = 1;
+        var factorymulti = 1;
+        var bankmulti = 1;
+        var templemulti = 1;
+        var wizardmulti = 1;
+        var shipmentmulti = 1;
+        var labmulti = 1;
     }
 
     update() {
         cps = cursors * 0.1 * cursormulti + grandmas * grandmamulti + farms * 8 * farmmulti + mines * 47 * minemulti + factories * 260 * factorymulti + banks *
-                1400 * bankmulti + temples * 7800 * templemulti + wizards * 44000 * wizardmulti + shipments * 260000 * shipmentmulti + labs * 1600000 * labmulti;
+            1400 * bankmulti + temples * 7800 * templemulti + wizards * 44000 * wizardmulti + shipments * 260000 * shipmentmulti + labs * 1600000 * labmulti;
 
         q("cursor-data").innerHTML = "You have " + cursors + " cursors, producing " + Math.round(cursors * 0.1 * cursormulti * 10) / 10 + " cps. Buy one for " + (Math.round(cursorcost + 0.49)) + " cookies.";
         q("grandma-data").innerHTML = "You have " + grandmas + " grandmas, producing " + Math.round(grandmas * 1 * grandmamulti * 10) / 10 + " cps. Buy one for " + (Math.round(grandmacost + 0.49)) + " cookies.";
@@ -69,139 +69,137 @@ var labmulti = 1;
         q("version").innerHTML = "Version " + version;
     }
     static exportSave() {
-        var exportCode = (cookies+"/"+totalcookies+"/"+clickmulti+"/"+cps+"/"+cursors+"/"+grandmas+"/"+farms+"/"+mines+"/"+factories+"/"
-			  +banks+"/"+temples+"/"+wizards+"/"+shipments+"/"+labs+"/"+(cursors*3+grandmas*17+factories*5+banks*55+farms*6+labs*8));
-	navigator.clipboard.writeText(exportCode);
+        var exportCode = (cookies + "/" + totalcookies + "/" + clickmulti + "/" + cps + "/" + cursors + "/" + grandmas + "/" + farms + "/" + mines + "/" + factories + "/" +
+            banks + "/" + temples + "/" + wizards + "/" + shipments + "/" + labs + "/" + (cursors * 3 + grandmas * 17 + factories * 5 + banks * 55 + farms * 6 + labs * 8));
+        navigator.clipboard.writeText(exportCode);
     }
     static importSave() {
-	var importCode = prompt("Enter save code: ");
-	const importArray=importCode.split("/");
-	cookies=importArray[0];
-	totalcookies=importArray[1];
-	clickmulti=importArray[2];
-	cps=importArray[3];
-	cursors=importArray[4];
+        var importCode = prompt("Enter save code: ");
+        const importArray = importCode.split("/");
+        cookies = importArray[0];
+        totalcookies = importArray[1];
+        clickmulti = importArray[2];
+        cps = importArray[3];
+        cursors = importArray[4];
     }
 }
 const game = new CookieClicker();
+
 function buy_cursor() {
-        if (cookies >= cursorcost) {
-                cookies -= cursorcost;
-                cursors += 1;
-                cursorcost *= 1.15;
-        }
-        update();
+    if (cookies >= cursorcost) {
+        cookies -= cursorcost;
+        cursors += 1;
+        cursorcost *= 1.15;
+    }
+    update();
 }
 
 function buy_grandma() {
-        if (cookies >= grandmacost) {
-                cookies -= grandmacost;
-                grandmas += 1;
-                grandmacost *= 1.15;
-        }
-        update();
+    if (cookies >= grandmacost) {
+        cookies -= grandmacost;
+        grandmas += 1;
+        grandmacost *= 1.15;
+    }
+    update();
 }
 
 function buy_farm() {
-        if (cookies >= farmcost) {
-                cookies -= farmcost;
-                farms += 1;
-                farmcost *= 1.15;
-        }
-        update();
+    if (cookies >= farmcost) {
+        cookies -= farmcost;
+        farms += 1;
+        farmcost *= 1.15;
+    }
+    update();
 }
 
 function buy_mine() {
-        if (cookies >= minecost) {
-                cookies -= minecost;
-                mines += 1;
-                minecost *= 1.15;
-        }
-        update();
+    if (cookies >= minecost) {
+        cookies -= minecost;
+        mines += 1;
+        minecost *= 1.15;
+    }
+    update();
 }
 
 function buy_factory() {
-        if (cookies >= factorycost) {
-                cookies -= factorycost;
-                factories += 1;
-                factorycost *= 1.15;
-        }
-        update();
+    if (cookies >= factorycost) {
+        cookies -= factorycost;
+        factories += 1;
+        factorycost *= 1.15;
+    }
+    update();
 }
 
 function buy_bank() {
-        if (cookies >= bankcost) {
-                cookies -= bankcost;
-                banks += 1;
-                bankcost *= 1.15;
-        }
-        update();
+    if (cookies >= bankcost) {
+        cookies -= bankcost;
+        banks += 1;
+        bankcost *= 1.15;
+    }
+    update();
 }
 
 function buy_temple() {
-        if (cookies >= templecost) {
-                cookies -= templecost;
-                temples += 1;
-                templecost *= 1.15;
-        }
-        update();
+    if (cookies >= templecost) {
+        cookies -= templecost;
+        temples += 1;
+        templecost *= 1.15;
+    }
+    update();
 }
 
 function buy_wizard() {
-        if (cookies >= wizardcost) {
-                cookies -= wizardcost;
-                wizards += 1;
-                wizardcost *= 1.15;
-        }
-        update();
+    if (cookies >= wizardcost) {
+        cookies -= wizardcost;
+        wizards += 1;
+        wizardcost *= 1.15;
+    }
+    update();
 }
 
 function buy_shipment() {
-        if (cookies >= shipmentcost) {
-                cookies -= shipmentcost;
-                shipments += 1;
-                shipmentcost *= 1.15;
-        }
-        update();
+    if (cookies >= shipmentcost) {
+        cookies -= shipmentcost;
+        shipments += 1;
+        shipmentcost *= 1.15;
+    }
+    update();
 }
 
 function buy_lab() {
-        if (cookies >= labcost) {
-                cookies -= labcost;
-                labs += 1;
-                labcost *= 1.15;
-        }
-        update();
+    if (cookies >= labcost) {
+        cookies -= labcost;
+        labs += 1;
+        labcost *= 1.15;
+    }
+    update();
 }
 
 //UPGRADES
 function Upgrade(cost, multi, upgid, id) {
-        this.cost = cost;
-        this.multi = multi;
-        this.upgid = upgid;
-        this.id = id;
-        this.upgrade = function() {
-                if (cookies >= cost) {
-                        cookies -= cost;
-                        cursormulti *= 2;
-                        clickmulti *= 2;
-                        let zz = q(this.id);
-                        zz.remove();
-                }
+    this.cost = cost;
+    this.multi = multi;
+    this.upgid = upgid;
+    this.id = id;
+    this.upgrade = function() {
+        if (cookies >= cost) {
+            cookies -= cost;
+            cursormulti *= 2;
+            clickmulti *= 2;
+            let zz = q(this.id);
+            zz.remove();
         }
+    }
 }
 var upg0 = new Upgrade(100, 2, 0, "upg0");
 var upg1 = new Upgrade(500, 2, 1, "upg1");
 
 function clicked() {
-        cookies += clickmulti;
-        totalcookies += clickmulti;
-        update();
+    cookies += clickmulti;
+    totalcookies += clickmulti;
+    update();
 }
 
 setInterval(() => {
     game.update();
 }, 100);
-
-
-
