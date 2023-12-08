@@ -71,7 +71,7 @@ class CookieClicker {
         q("cookie_counter").innerHTML = "Cookies: " + Math.round(this.cookies - 0.5);
         q("cps_counter").innerHTML = "CPS: " + Math.round(this.cps * 10) / 10;
         q("total_cookies").innerHTML = "Total Cookies produced ever: " + Math.round(this.totalcookies - 0.5);
-        
+        q("version").innerHTML = "Version " + version;
     }
     static exportSave() {
         //var exportCode = (cookies + "/" + totalcookies + "/" + clickmulti + "/" + cps + "/" + cursors + "/" + grandmas + "/" + farms + "/" + mines + "/" + factories + "/" +
@@ -93,4 +93,3 @@ const game = new CookieClicker();
 setInterval(() => {
     game.update();
 }, 100);
-q("version").innerHTML = "Version " + version;
