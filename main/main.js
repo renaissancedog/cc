@@ -1,4 +1,4 @@
-var version = "b.12.8.d";
+var version = "b.12.8.e";
 function q(id) {
     return document.getElementById(id);
 }
@@ -101,7 +101,7 @@ class CookieClicker {
         q("cookie_counter").innerHTML = "Cookies: " + Math.round(cookies - 0.5);
         q("cps_counter").innerHTML = "CPS: " + Math.round(cps * 10) / 10;
         q("total_cookies").innerHTML = "Total Cookies produced ever: " + Math.round(totalcookies - 0.5);
-        q("version").innerHTML = "Version " + version;
+        
     }
     static exportSave() {
         var exportCode = (cookies + "/" + totalcookies + "/" + clickmulti + "/" + cps + "/" + cursors + "/" + grandmas + "/" + farms + "/" + mines + "/" + factories + "/" +
@@ -148,3 +148,4 @@ function clicked() {
 setInterval(() => {
     game.update();
 }, 100);
+q("version").innerHTML = "Version " + version;
