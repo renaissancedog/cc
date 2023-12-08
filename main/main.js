@@ -1,8 +1,42 @@
-var version = "b.11.28.a";
+var version = "b.12.8.a";
 
 function q(id) {
     return document.getElementById(id);
 }
+class Building {
+    constructor(name, baseCps, baseCost, costMultiplier) {
+        this.name = name;
+        this.baseCps = baseCps;
+        this.baseCost = baseCost;
+        this.costMultiplier = costMultiplier;
+        this.count = 0;
+        this.currentCost = baseCost;
+    }
+
+    buy() {
+        if (cookies >= this.currentCost) {
+            cookies -= this.currentCost;
+            this.count++;
+            this.currentCost = Math.round(this.baseCost * Math.pow(this.costMultiplier, this.count));
+            update();
+        }
+    }
+
+    getCps() {
+        return this.count * this.baseCps;
+    }
+
+    getCost() {
+        return this.currentCost;
+    }
+
+    getInfo() {
+        return `You have ${this.count} ${this.name}s, producing ${Math.round(this.getCps() * 10) / 10} cps. Buy one for ${Math.round(this.getCost() + 0.49)} cookies.`;
+    }
+}
+const cursor = new Building("cursor", 0.1, 15, 1.15);
+const grandma = new Building("grandma", 1, 100, 1.15);
+cursor.buy();
 
 class CookieClicker {
     constructor() {
