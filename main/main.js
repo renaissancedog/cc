@@ -12,12 +12,11 @@ class Building {
         this.count = 0;
     }
 
-    buy() {
-        if (game.cookies >= this.currentCost) {
-            game.cookies -= this.currentCost;
+    buy(cookies) {
+        if (cookies >= this.currentCost) {
+            cookies -= this.currentCost;
             this.count++;
             this.cost*=this.costMultiplier;
-            game.update();
         }
     }
 
@@ -43,7 +42,7 @@ const temples = new Building(7800, 20000000);
 const wizards = new Building(44000, 330000000);
 const shipments = new Building(260000, 5100000000);
 const labs = new Building(1600000, 75000000000);
-cursors.buy();
+
 
 class CookieClicker {
     constructor() {
@@ -54,6 +53,10 @@ class CookieClicker {
     }
     add(add) {
         this.cookies+=add;
+    }
+    clicked() {
+        this.cookies += this.clickmulti;
+        this.totalcookies += this.clickmulti;
     }
     update() {
         
@@ -93,13 +96,10 @@ class CookieClicker {
         //cps = importArray[3];
         //cursors = importArray[4];
     }
-    clicked() {
-        this.cookies += this.clickmulti;
-        this.totalcookies += this.clickmulti;
-        this.update();
-    }
+    
 }
 const game = new CookieClicker();
+cursors.buy(game.cookies);
 setInterval(() => {
     game.update();
 }, 100);
