@@ -140,9 +140,9 @@ var upg0 = new Upgrade(100, 2, 0, "upg0");
 var upg1 = new Upgrade(500, 2, 1, "upg1");
 
 function clicked() {
-    cookies += clickmulti;
-    totalcookies += clickmulti;
-    update();
+    game.cookies += game.clickmulti;
+    game.totalcookies += game.clickmulti;
+    game.update();
 }
 
 setInterval(() => {
