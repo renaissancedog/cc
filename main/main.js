@@ -1,29 +1,29 @@
-var version = "b.12.9.b";
+var version = "b.12.9.c";
+
 function q(id) {
     return document.getElementById(id);
 }
 
 class Building {
     constructor(baseCps, cost) {
-        this.multiplier=1;
+        this.multiplier = 1;
         this.baseCps = baseCps;
         this.cost = cost;
         this.costMultiplier = 1.15;
         this.count = 0;
     }
-
     buy(cookies) {
         if (cookies >= this.cost) {
             cookies -= this.cost;
             this.count++;
-            this.cost*=this.costMultiplier;
+            this.cost *= this.costMultiplier;
         }
     }
-
     getCps() {
         return this.count * this.baseCps * this.multiplier;
     }
 }
+
 const cursors = new Building(0.1, 15);
 const grandmas = new Building(1, 100);
 const farms = new Building(8, 1100);
@@ -43,19 +43,19 @@ class CookieClicker {
         this.clickmulti = 1;
     }
     add(add) {
-        this.cookies+=add;
+        this.cookies += add;
     }
     clicked() {
         this.cookies += this.clickmulti;
         this.totalcookies += this.clickmulti;
     }
     update() {
-        
-        this.cps = cursors.getCps() + grandmas.getCps() + farms.getCps() + mines.getCps() + factories.getCps() + banks.getCps() 
-            + temples.getCps() + wizards.getCps() + shipments.getCps() + labs.getCps();
 
-        q("cursor-data").innerHTML = "You have " + cursors.count + " cursors, producing " + Math.round(cursors.getCps()*10) / 10 + " cps. Buy one for " + (Math.round(cursors.cost + 0.49)) + " cookies.";
-        q("grandma-data").innerHTML = "You have " + grandmas.count + " grandmas, producing " + Math.round(grandmas.getCps()* 10) / 10 + " cps. Buy one for " + (Math.round(grandmas.cost + 0.49)) + " cookies.";
+        this.cps = cursors.getCps() + grandmas.getCps() + farms.getCps() + mines.getCps() + factories.getCps() + banks.getCps() +
+            temples.getCps() + wizards.getCps() + shipments.getCps() + labs.getCps();
+
+        q("cursor-data").innerHTML = "You have " + cursors.count + " cursors, producing " + Math.round(cursors.getCps() * 10) / 10 + " cps. Buy one for " + (Math.round(cursors.cost + 0.49)) + " cookies.";
+        q("grandma-data").innerHTML = "You have " + grandmas.count + " grandmas, producing " + Math.round(grandmas.getCps() * 10) / 10 + " cps. Buy one for " + (Math.round(grandmas.cost + 0.49)) + " cookies.";
         q("farm-data").innerHTML = "You have " + farms.count + " farms, producing " + Math.round(farms.getCps() * 10) / 10 + " cps. Buy one for " + (Math.round(farms.cost + 0.49)) + " cookies.";
         q("mine-data").innerHTML = "You have " + mines.count + " mines, producing " + Math.round(mines.getCps() * 10) / 10 + " cps. Buy one for " + (Math.round(mines.cost + 0.49)) + " cookies.";
         q("factory-data").innerHTML = "You have " + factories.count + " factories, producing " + Math.round(factories.getCps() * 10) / 10 + " cps. Buy one for " + (Math.round(factories.cost + 0.49)) + " cookies.";
@@ -74,8 +74,8 @@ class CookieClicker {
         q("version").innerHTML = "Version " + version;
     }
     static exportSave() {
-        var exportCode = (this.cookies + "/" + this.totalcookies + "/" + this.clickmulti + "/" + this.cps + "/" + cursors.count + "/" + grandmas.count + "/" + farms.count + "/" + mines.count + "/" + factories.count + "/" +
-          banks.count + "/" + temples.count + "/" + wizards.count + "/" + shipments.count + "/" + labs.count;
+        var exportCode = this.cookies + "/" + this.totalcookies + "/" + this.clickmulti + "/" + this.cps + "/" + cursors.count + "/" + grandmas.count + "/" + farms.count + "/" + mines.count + "/" + factories.count + "/" +
+            banks.count + "/" + temples.count + "/" + wizards.count + "/" + shipments.count + "/" + labs.count;
         navigator.clipboard.writeText(exportCode);
     }
     static importSave() {
@@ -87,7 +87,6 @@ class CookieClicker {
         this.cps = importArray[3];
         this.cursors = importArray[4];
     }
-    
 }
 const game = new CookieClicker();
 setInterval(() => {
