@@ -1,4 +1,4 @@
-var version = "b.12.9.f";
+var version = "b.12.9.g";
 
 function q(id) {
     return document.getElementById(id);
@@ -95,23 +95,23 @@ class CookieClicker {
             cursors.count = parseInt(importArray[4]);
             cursors.cost *= (Math.pow(1.15, cursors.count));
             grandmas.count = parseInt(importArray[5]);
-            grandmas.cost *= (Math.pow(1.15, cursors.count));
+            grandmas.cost *= (Math.pow(1.15, grandmas.count));
             farms.count = parseInt(importArray[6]);
-            farms.cost *= (Math.pow(1.15, cursors.count));
+            farms.cost *= (Math.pow(1.15, farms.count));
             mines.count = parseInt(importArray[7]);
-            mines.cost *= (Math.pow(1.15, cursors.count));
+            mines.cost *= (Math.pow(1.15, mines.count));
             factories.count = parseInt(importArray[8]);
-            factories.cost *= (Math.pow(1.15, cursors.count));
+            factories.cost *= (Math.pow(1.15, factories.count));
             banks.count = parseInt(importArray[9]);
-            banks.cost *= (Math.pow(1.15, cursors.count));
+            banks.cost *= (Math.pow(1.15, banks.count));
             temples.count = parseInt(importArray[10]);
-            temples.cost *= (Math.pow(1.15, cursors.count));
+            temples.cost *= (Math.pow(1.15, temples.count));
             wizards.count = parseInt(importArray[11]);
-            wizards.cost *= (Math.pow(1.15, cursors.count));
+            wizards.cost *= (Math.pow(1.15, wizards.count));
             shipments.count = parseInt(importArray[12]);
-            shipments.cost *= (Math.pow(1.15, cursors.count));
+            shipments.cost *= (Math.pow(1.15, shipments.count));
             labs.count = parseInt(importArray[13]);
-            labs.cost *= (Math.pow(1.15, cursors.count));
+            labs.cost *= (Math.pow(1.15, labs.count));
         }
     }
 }
