@@ -1,4 +1,4 @@
-var version = "b.12.9.e";
+var version = "b.12.9.f";
 
 function q(id) {
     return document.getElementById(id);
@@ -53,10 +53,9 @@ class CookieClicker {
         this.totalcookies += this.clickmulti;
     }
     update() {
-
         this.cps = cursors.getCps() + grandmas.getCps() + farms.getCps() + mines.getCps() + factories.getCps() + banks.getCps() +
             temples.getCps() + wizards.getCps() + shipments.getCps() + labs.getCps();
-
+        
         q("cursor-data").innerHTML = "You have " + cursors.count + " cursors, producing " + Math.round(cursors.getCps() * 10) / 10 + " cps. Buy one for " + (Math.round(cursors.cost + 0.49)) + " cookies.";
         q("grandma-data").innerHTML = "You have " + grandmas.count + " grandmas, producing " + Math.round(grandmas.getCps() * 10) / 10 + " cps. Buy one for " + (Math.round(grandmas.cost + 0.49)) + " cookies.";
         q("farm-data").innerHTML = "You have " + farms.count + " farms, producing " + Math.round(farms.getCps() * 10) / 10 + " cps. Buy one for " + (Math.round(farms.cost + 0.49)) + " cookies.";
@@ -78,38 +77,42 @@ class CookieClicker {
     }
     exportSave() {
         var exportCode = this.cookies + "/" + this.totalcookies + "/" + this.clickmulti + "/" + this.cps + "/" + cursors.count + "/" + grandmas.count + "/" + farms.count + "/" + mines.count + "/" + factories.count + "/" +
-            banks.count + "/" + temples.count + "/" + wizards.count + "/" + shipments.count + "/" + labs.count;
+            banks.count + "/" + temples.count + "/" + wizards.count + "/" + shipments.count + "/" + labs.count + "/" + (cursors.count * 92 + grandmas.count * 32 + farms.count * 16);
         navigator.clipboard.writeText(exportCode);
     }
     importSave() {
         var importCode = prompt("Enter save code: ");
         const importArray = importCode.split("/");
+        var check = parseInt(importArray[14]);
+        if (check != (parseInt(importArray[4]) * 92 + parseInt(importArray[5]) * 32 + parseInt(importArray[6]) * 16)) {
+            alert("Invalid save");
+        } else {
+            this.cookies = parseInt(importArray[0]);
+            this.totalcookies = parseInt(importArray[1]);
+            this.clickmulti = parseInt(importArray[2]);
+            this.cps = parseInt(importArray[3]);
 
-        this.cookies = parseInt(importArray[0]);
-        this.totalcookies = parseInt(importArray[1]);
-        this.clickmulti = parseInt(importArray[2]);
-        this.cps = parseInt(importArray[3]);
-        
-        cursors.count = parseInt(importArray[4]);
-        cursors.cost *= (Math.pow(1.15, cursors.count));
-        grandmas.count = parseInt(importArray[5]);
-        grandmas.cost *= (Math.pow(1.15, cursors.count));
-        farms.count = parseInt(importArray[6]);
-        farms.cost *= (Math.pow(1.15, cursors.count));
-        mines.count = parseInt(importArray[7]);
-        mines.cost *= (Math.pow(1.15, cursors.count));
-        factories.count = parseInt(importArray[8]);
-        factories.cost *= (Math.pow(1.15, cursors.count));
-        banks.count = parseInt(importArray[9]);
-        banks.cost *= (Math.pow(1.15, cursors.count));
-        temples.count = parseInt(importArray[10]);
-        temples.cost *= (Math.pow(1.15, cursors.count));
-        wizards.count = parseInt(importArray[11]);
-        wizards.cost *= (Math.pow(1.15, cursors.count));
-        shipments.count = parseInt(importArray[12]);
-        shipments.cost *= (Math.pow(1.15, cursors.count));
-        labs.count = parseInt(importArray[13]);
-        labs.cost *= (Math.pow(1.15, cursors.count));
+            cursors.count = parseInt(importArray[4]);
+            cursors.cost *= (Math.pow(1.15, cursors.count));
+            grandmas.count = parseInt(importArray[5]);
+            grandmas.cost *= (Math.pow(1.15, cursors.count));
+            farms.count = parseInt(importArray[6]);
+            farms.cost *= (Math.pow(1.15, cursors.count));
+            mines.count = parseInt(importArray[7]);
+            mines.cost *= (Math.pow(1.15, cursors.count));
+            factories.count = parseInt(importArray[8]);
+            factories.cost *= (Math.pow(1.15, cursors.count));
+            banks.count = parseInt(importArray[9]);
+            banks.cost *= (Math.pow(1.15, cursors.count));
+            temples.count = parseInt(importArray[10]);
+            temples.cost *= (Math.pow(1.15, cursors.count));
+            wizards.count = parseInt(importArray[11]);
+            wizards.cost *= (Math.pow(1.15, cursors.count));
+            shipments.count = parseInt(importArray[12]);
+            shipments.cost *= (Math.pow(1.15, cursors.count));
+            labs.count = parseInt(importArray[13]);
+            labs.cost *= (Math.pow(1.15, cursors.count));
+        }
     }
 }
 const game = new CookieClicker();
