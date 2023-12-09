@@ -1,4 +1,4 @@
-var version = "b.12.9.h";
+var version = "b.12.9.i";
 
 function q(id) {
     return document.getElementById(id);
@@ -28,7 +28,7 @@ class Building {
 const cursors = new Building(0.1, 15);
 const grandmas = new Building(1, 100);
 const farms = new Building(8, 1100);
-const mines = new Building(47, 13000);
+const mines = new Building(47, 12000);
 const factories = new Building(260, 130000);
 const banks = new Building(1400, 1400000);
 const temples = new Building(7800, 20000000);
