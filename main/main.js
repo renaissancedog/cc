@@ -1,4 +1,4 @@
-var version = "b.12.9.g";
+var version = "b.12.9.h";
 
 function q(id) {
     return document.getElementById(id);
@@ -8,6 +8,7 @@ class Building {
     constructor(baseCps, cost) {
         this.multiplier = 1;
         this.baseCps = baseCps;
+        this.baseCost = cost;
         this.cost = cost;
         this.costMultiplier = 1.15;
         this.count = 0;
@@ -93,25 +94,25 @@ class CookieClicker {
             this.cps = parseInt(importArray[3]);
 
             cursors.count = parseInt(importArray[4]);
-            cursors.cost *= (Math.pow(1.15, cursors.count));
+            cursors.cost = cursors.baseCost*(Math.pow(1.15, cursors.count));
             grandmas.count = parseInt(importArray[5]);
-            grandmas.cost *= (Math.pow(1.15, grandmas.count));
+            grandmas.cost = grandmas.baseCost* (Math.pow(1.15, grandmas.count));
             farms.count = parseInt(importArray[6]);
-            farms.cost *= (Math.pow(1.15, farms.count));
+            farms.cost = farms.baseCost* (Math.pow(1.15, farms.count));
             mines.count = parseInt(importArray[7]);
-            mines.cost *= (Math.pow(1.15, mines.count));
+            mines.cost = mines.baseCost* (Math.pow(1.15, mines.count));
             factories.count = parseInt(importArray[8]);
-            factories.cost *= (Math.pow(1.15, factories.count));
+            factories.cost = factories.baseCost* (Math.pow(1.15, factories.count));
             banks.count = parseInt(importArray[9]);
-            banks.cost *= (Math.pow(1.15, banks.count));
+            banks.cost = banks.baseCost* (Math.pow(1.15, banks.count));
             temples.count = parseInt(importArray[10]);
-            temples.cost *= (Math.pow(1.15, temples.count));
+            temples.cost = temples.baseCost* (Math.pow(1.15, temples.count));
             wizards.count = parseInt(importArray[11]);
-            wizards.cost *= (Math.pow(1.15, wizards.count));
+            wizards.cost = wizards.baseCost* (Math.pow(1.15, wizards.count));
             shipments.count = parseInt(importArray[12]);
-            shipments.cost *= (Math.pow(1.15, shipments.count));
+            shipments.cost = shipments.baseCost* (Math.pow(1.15, shipments.count));
             labs.count = parseInt(importArray[13]);
-            labs.cost *= (Math.pow(1.15, labs.count));
+            labs.cost = labs.baseCost* (Math.pow(1.15, labs.count));
         }
     }
 }
