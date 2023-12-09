@@ -1,4 +1,4 @@
-var version = "b.12.9.c";
+var version = "b.12.9.d";
 
 function q(id) {
     return document.getElementById(id);
@@ -14,7 +14,7 @@ class Building {
     }
     buy(cookies) {
         if (cookies >= this.cost) {
-            cookies -= this.cost;
+            game.remove(this.cost);
             this.count++;
             this.cost *= this.costMultiplier;
         }
@@ -42,8 +42,11 @@ class CookieClicker {
         this.cps = 0;
         this.clickmulti = 1;
     }
-    add(add) {
-        this.cookies += add;
+    add(amt) {
+        this.cookies += amt;
+    }
+    remove(amt) {
+        this.cookies -= amt;
     }
     clicked() {
         this.cookies += this.clickmulti;
