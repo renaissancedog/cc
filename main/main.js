@@ -1,4 +1,4 @@
-var version = "b.12.9.d";
+var version = "b.12.9.e";
 
 function q(id) {
     return document.getElementById(id);
@@ -34,7 +34,7 @@ const temples = new Building(7800, 20000000);
 const wizards = new Building(44000, 330000000);
 const shipments = new Building(260000, 5100000000);
 const labs = new Building(1600000, 75000000000);
-
+const buildings = [cursors, grandmas, farms, mines, factories, banks, temples, wizards, shipments, labs];
 class CookieClicker {
     constructor() {
         this.cookies = 0;
@@ -76,19 +76,40 @@ class CookieClicker {
         q("total_cookies").innerHTML = "Total Cookies produced ever: " + Math.round(this.totalcookies - 0.5);
         q("version").innerHTML = "Version " + version;
     }
-    static exportSave() {
+    exportSave() {
         var exportCode = this.cookies + "/" + this.totalcookies + "/" + this.clickmulti + "/" + this.cps + "/" + cursors.count + "/" + grandmas.count + "/" + farms.count + "/" + mines.count + "/" + factories.count + "/" +
             banks.count + "/" + temples.count + "/" + wizards.count + "/" + shipments.count + "/" + labs.count;
         navigator.clipboard.writeText(exportCode);
     }
-    static importSave() {
+    importSave() {
         var importCode = prompt("Enter save code: ");
         const importArray = importCode.split("/");
-        this.cookies = importArray[0];
-        this.totalcookies = importArray[1];
-        this.clickmulti = importArray[2];
-        this.cps = importArray[3];
-        this.cursors = importArray[4];
+
+        this.cookies = parseInt(importArray[0]);
+        this.totalcookies = parseInt(importArray[1]);
+        this.clickmulti = parseInt(importArray[2]);
+        this.cps = parseInt(importArray[3]);
+        
+        cursors.count = parseInt(importArray[4]);
+        cursors.cost *= (Math.pow(1.15, cursors.count));
+        grandmas.count = parseInt(importArray[5]);
+        grandmas.cost *= (Math.pow(1.15, cursors.count));
+        farms.count = parseInt(importArray[6]);
+        farms.cost *= (Math.pow(1.15, cursors.count));
+        mines.count = parseInt(importArray[7]);
+        mines.cost *= (Math.pow(1.15, cursors.count));
+        factories.count = parseInt(importArray[8]);
+        factories.cost *= (Math.pow(1.15, cursors.count));
+        banks.count = parseInt(importArray[9]);
+        banks.cost *= (Math.pow(1.15, cursors.count));
+        temples.count = parseInt(importArray[10]);
+        temples.cost *= (Math.pow(1.15, cursors.count));
+        wizards.count = parseInt(importArray[11]);
+        wizards.cost *= (Math.pow(1.15, cursors.count));
+        shipments.count = parseInt(importArray[12]);
+        shipments.cost *= (Math.pow(1.15, cursors.count));
+        labs.count = parseInt(importArray[13]);
+        labs.cost *= (Math.pow(1.15, cursors.count));
     }
 }
 const game = new CookieClicker();
