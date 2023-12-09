@@ -1,4 +1,4 @@
-var version = "b.12.9.a";
+var version = "b.12.9.b";
 function q(id) {
     return document.getElementById(id);
 }
@@ -18,7 +18,6 @@ class Building {
             this.count++;
             this.cost*=this.costMultiplier;
         }
-        return 0;
     }
 
     getCps() {
@@ -75,18 +74,18 @@ class CookieClicker {
         q("version").innerHTML = "Version " + version;
     }
     static exportSave() {
-        //var exportCode = (cookies + "/" + totalcookies + "/" + clickmulti + "/" + cps + "/" + cursors + "/" + grandmas + "/" + farms + "/" + mines + "/" + factories + "/" +
-        //  banks + "/" + temples + "/" + wizards + "/" + shipments + "/" + labs + "/" + (cursors * 3 + grandmas * 17 + factories * 5 + banks * 55 + farms * 6 + labs * 8));
-        //navigator.clipboard.writeText(exportCode);
+        var exportCode = (this.cookies + "/" + this.totalcookies + "/" + this.clickmulti + "/" + this.cps + "/" + cursors.count + "/" + grandmas.count + "/" + farms.count + "/" + mines.count + "/" + factories.count + "/" +
+          banks.count + "/" + temples.count + "/" + wizards.count + "/" + shipments.count + "/" + labs.count;
+        navigator.clipboard.writeText(exportCode);
     }
     static importSave() {
-        //var importCode = prompt("Enter save code: ");
-        //const importArray = importCode.split("/");
-        //cookies = importArray[0];
-        //totalcookies = importArray[1];
-        //clickmulti = importArray[2];
-        //cps = importArray[3];
-        //cursors = importArray[4];
+        var importCode = prompt("Enter save code: ");
+        const importArray = importCode.split("/");
+        this.cookies = importArray[0];
+        this.totalcookies = importArray[1];
+        this.clickmulti = importArray[2];
+        this.cps = importArray[3];
+        this.cursors = importArray[4];
     }
     
 }
