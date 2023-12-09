@@ -1,4 +1,4 @@
-var version = "b.12.8.h";
+var version = "b.12.9.a";
 function q(id) {
     return document.getElementById(id);
 }
@@ -13,11 +13,12 @@ class Building {
     }
 
     buy(cookies) {
-        if (cookies >= this.currentCost) {
-            cookies -= this.currentCost;
+        if (cookies >= this.cost) {
+            cookies -= this.cost;
             this.count++;
             this.cost*=this.costMultiplier;
         }
+        return 0;
     }
 
     getCps() {
