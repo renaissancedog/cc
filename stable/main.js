@@ -1,4 +1,4 @@
-var version = "2.0";
+var version = "2.0.1";
 
 function q(id) {
     return document.getElementById(id);
@@ -74,7 +74,7 @@ class CookieClicker {
         q("cookie_counter").innerHTML = "Cookies: " + Math.round(this.cookies - 0.5);
         q("cps_counter").innerHTML = "CPS: " + Math.round(this.cps * 10) / 10;
         q("total_cookies").innerHTML = "Total Cookies produced ever: " + Math.round(this.totalcookies - 0.5);
-        q("version").innerHTML = "Version " + version;
+        q("version").innerHTML = "JS Version " + version;
     }
     exportSave() {
         var exportCode = this.cookies + "/" + this.totalcookies + "/" + this.clickmulti + "/" + this.cps + "/" + cursors.count + "/" + grandmas.count + "/" + farms.count + "/" + mines.count + "/" + factories.count + "/" +
