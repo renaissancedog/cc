@@ -1,2 +1,2 @@
-# cc
-Hi. This is cookie clicker simplified.
+#Cookie Clicker
+Click the cookie
